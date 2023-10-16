@@ -1,0 +1,104 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// data
+import { allPlaylists, playlists, songs } from "../../lib/data";
+
+// componentes
+import NavigationButtons from "../../components/react/NavigationButtons";
+import Enlace from "../../components/Enlace.astro";
+import MusicTable from "@/components/MusicTable.astro";
+import CardPlayButton from "@/components/CardPlayButton";
+
+// id Params
+const { id } = Astro.params;
+
+// playlistSeleccionada
+const playlist = allPlaylists.find((playlist) => playlist.id === id);
+
+// Canciones del playlist elegida
+const playListSongs = songs.filter(
+    (song) => song.albumId === playlist?.albumId
+);
+
+// bg
+const bgFondo = {
+    backgroundColor: playlist?.color.accent,
+};
+
+---
+
+<Layout title='Spotify Clone'>
+    <div
+        id='playlist-container'
+        class='relative flex flex-col h-full bg-base min-h-full rounded-lg overflow-hidden'
+        transition:name={`playlist ${playlist?.id} box`}
+    >
+        <div class='absolute w-full h-[600px] gradiantFondo' style={bgFondo}>
+        </div>
+        <!-- PageHeader -->
+        <div class='sticky top-0 h-16'>
+            <header class='px-6 py-4 h-16'>
+                <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
+            </header>
+        </div>
+
+        <section class='min-h-[268px] flex p-6 gap-8 items-end'>
+            <picture class='aspect-square w-[232px] h-[232px] block'>
+                <img
+                    class='shadow object-cover w-full h-full'
+                    src={playlist?.cover}
+                    alt={`Cover of ${playlist?.title}`}
+                    transition:name=`playlist ${playlist?.id} image`
+                />
+            </picture>
+
+            <div class='relative flex flex-col justify-end'>
+                <div>
+                    <span class='font-light'>Playlist</span>
+                </div>
+                <div>
+                    <h1
+                        class='text-7xl font-black mt-2 mb-4'
+                        transition:name=`playlist ${playlist?.id} title`
+                    >
+                        {playlist?.title}
+                    </h1>
+                </div>
+                <div
+                    class='font-normal text-sm text-gray'
+                    transition:animate="none"
+                >
+                    {
+                        playlist?.artists.map((artist, i) => (
+                            <>
+                                <Enlace>{artist}</Enlace>
+                                <span>
+                                    {playlist?.artists.length !== i + 1
+                                        ? " • "
+                                        : ""}
+                                </span>
+                            </>
+                        ))
+                    }
+                </div>
+                <p class="text-sm text-gray mt-2">
+                    <span class="text-white">{playListSongs.length} canciones</span>, 3 h aproximadamente
+                </p>
+            </div>
+        </section>
+        <div transition:name=`playlist ${id} play` class="px-6 py-2 relative z-10">
+            <CardPlayButton client:visible id={id} size="3.5rem"/>
+        </div>
+        <section class="px-6">
+            <MusicTable songs={playListSongs}/>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .gradiantFondo {
+        background: linear-gradient(rgba(0, 0, 0, 0.6) 0, #121212 100%),
+            rgb(0 0 0 / 0.1);
+    }
+</style>

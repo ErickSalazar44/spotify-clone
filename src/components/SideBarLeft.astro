@@ -1,0 +1,63 @@
+---
+// icons
+import Home from "@/icons/Home.astro";
+import Search from "@/icons/Search.astro";
+import Library from "@/icons/Library.astro";
+
+// componentes
+import SideMenuItem from "./SideMenuItem.astro";
+import SideMenuCard from "./SideMenuCard.astro"
+
+// data 
+import { playlists } from "@/lib/data"
+---
+
+<nav class='flex flex-col gap-2 h-full'>
+    <!-- M E N U -->
+    <div class='bg-base rounded-lg'>
+        <ul class='px-3 py-2 text-gray font-bold'>
+            <SideMenuItem href='/'>
+                <Home />
+                <span class="elementText">Inicio</span>
+            </SideMenuItem>
+
+            <SideMenuItem href='/#'>
+                <Search />
+                <span class="elementText">Buscar</span>
+            </SideMenuItem>
+        </ul>
+    </div>
+
+    <!-- B I B L I O T E C A -->
+    <div class='rounded-lg bg-base flex-1'>
+        <header class='py-2 px-4 text-gray'>
+            <button
+                id='btnContraerBiblioteca'
+                class='h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center'
+            >
+                <Library expand={true}/>
+                <span class="elementText min-w-[250px] text-start">Tu biblioteca</span>
+            </button>
+        </header>
+        <ul class="px-2">
+            {
+                playlists.map(playlist => <SideMenuCard playlist={playlist}/>)
+            }
+        </ul>
+    </div>
+</nav>
+
+
+<!-- ESTE SCRIPT SE ENCARGA DE CONTRAER LA BIBLIOTECA -->
+<script >
+
+    const contraerBiblioteca$ = document.getElementById('btnContraerBiblioteca')
+    const elements = document.querySelectorAll('.elementText')
+
+    contraerBiblioteca$?.addEventListener("click", () => {
+        elements.forEach((element) => {
+            element.classList.toggle('hidden')
+        })
+    })
+
+</script>

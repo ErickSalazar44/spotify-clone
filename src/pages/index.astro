@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// data
+import { playlists } from '@/lib/data';
+
+// componentes 
+import PlayListItemCard from '@/components/PlayListItemCard.astro'
+import NavigationButtons from '../components/react/NavigationButtons'
+import { Greating } from '@/components/react/Greating';
+
+// bg
+const bgFondo = {
+    backgroundColor: 'cyan'
+}
+
+---
+
+<Layout title="Spotify Clone">
+    <div 
+        id="playlist-container"
+        class="relative transition-colors duration-1000 bg-base min-h-full rounded-lg"
+    >
+        <div  class="absolute w-full h-[332px] gradiantFondo" style={bgFondo}></div>
+        <!-- PageHeader -->
+        <div class="sticky top-0 h-16">
+            <header class="px-6 py-4 h-16">
+                <NavigationButtons client:load backDisable={true} forWardDisable={false}/>
+            </header>
+        </div>
+
+        <section class="relative z-10 px-6">
+            <!-- Saludos -->
+            <Greating/>
+
+            <div class="flex flex-wrap mt-6 gap-6">
+                { playlists.map(playlist => <PlayListItemCard playlist={playlist}/>) }
+            </div>
+            
+        </section>
+
+
+
+    </div>
+</Layout>
+
+<style>
+.gradiantFondo {
+    background: linear-gradient(rgba(0,0,0,.6) 0,#121212 100%),rgb(0 0 0 / 0.1)
+}
+</style>

@@ -1,0 +1,56 @@
+---
+import Time from "@/icons/Time.astro";
+import { type Song } from "@/lib/data";
+import Enlace from "./Enlace.astro";
+
+interface Props {
+    songs: Song[];
+}
+
+const { songs } = Astro.props;
+---
+
+<table
+    class='table-auto text-left min-w-full divide-y divide-txtgray/30 relative z-10'
+>
+    <thead>
+        <tr class='text-gray'>
+            <th class='pl-6 pr-2 py-2 font-light'>#</th>
+            <th class='px-4 py-2 font-light'>Título</th>
+            <th class='px-4 py-2 font-light'>Álbum</th>
+            <th class='px-4 py-2 font-light'><Time /></th>
+        </tr>
+    </thead>
+    <div class='w-full h-2'></div>
+    <tbody>
+        <tr class="h-[10px]"></tr>
+        {
+            songs.map((song, index) => (
+                <tr class='text-gray font-light hover:bg-white/10 rounded'>
+                    <td class='pl-6 py-1 w-8 rounded-l'>{index + 1}</td>
+                    <td class='px-4 py-1 flex gap-3'>
+                        <picture>
+                            <img
+                                class='w-10 h-10'
+                                src={song.image}
+                                alt={song.title}
+                            />
+                        </picture>
+                        <div class='flex flex-col'>
+                            <h3 class='font-light text-white'>
+                                <Enlace>{song.title}</Enlace>
+                            </h3>
+                            <span class='text-sm'>
+                                {song.artists.join(", ")}
+                            </span>
+                        </div>
+                    </td>
+                    <td class='px-4 py-1 text-sm text-white'>
+                        <Enlace>{song.album}</Enlace>
+                    </td>
+                    <td class='px-4 py-1 text-sm w-28 rounded-r'>{song.duration}</td>
+                </tr>
+            ))
+        }
+    </tbody>
+</table>

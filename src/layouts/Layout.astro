@@ -1,0 +1,67 @@
+---
+// components
+import Player from "@/components/react/Player";
+import SideBarLeft from "../components/SideBarLeft.astro"
+
+// ViewTransition Api
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions fallback="none"/>
+		<link rel="stylesheet" href="/fonts/fonts.css">
+	</head>
+	<body>
+		<div id="app" class="relativo h-screen p-2 gap-2">
+			<aside class="[grid-area:left-sidebar] flex flex-col overflow-y-auto">
+				<SideBarLeft/>
+			</aside>
+
+			<main class="[grid-area:main-view] rounded-lg overflow-y-auto">
+				<slot />
+			</main>
+
+			<footer class="[grid-area:now-player] h-[72px] flex justify-between items-center">
+				<Player client:load transition:name="media-player" transition:persist/>
+			</footer>
+
+		</div>
+		
+	</body>
+</html>
+
+
+<style>
+	#app {
+		display: grid;
+		grid-template-areas: 
+			"left-sidebar main-view right-sidebar"
+			"now-player now-player now-player"
+		;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr auto;
+	}
+</style>
+
+<style is:global>
+	html {
+		font-family: "CircularStd",system-ui, sans-serif;
+		background: #000;
+		color-scheme: dark;
+	}
+
+</style>
