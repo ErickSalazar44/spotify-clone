@@ -13,6 +13,9 @@
       ],
       "@/lib": [
         "src/lib/*"
+      ],
+      "@/menu": [
+        "src/components/menu/*"
       ]
     },
     "jsx": "react-jsx",

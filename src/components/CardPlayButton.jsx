@@ -1,4 +1,4 @@
-import { Pause, Play } from "./react/Player";
+import { Pause, Play } from "./menu/Player";
 import { usePlayerStore } from "@/store/playerStore"; 
 
 const CardPlayButton = ({ id, size = '3rem' }) => {
@@ -26,9 +26,6 @@ const CardPlayButton = ({ id, size = '3rem' }) => {
                 setCurrentMusic( {songs, playlist, song: songs[0]})
             })
     }
-
-    
-
 
     return (
         <button 

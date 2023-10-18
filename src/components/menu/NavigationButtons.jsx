@@ -10,10 +10,10 @@ const NavigationButtons = ({backDisable, forWardDisable}) => {
     };
 
     return (
-        <nav className='flex gap-2 opacity-70'>
+        <nav className='flex gap-2'>
             <button
                 onClick={goBack}
-                className={`w-8 h-8 rounded-full bg-gray1 grid place-content-center ${backDisable && 'cursor-not-allowed'}`}
+                className={`w-8 h-8 rounded-full bg-black/70 grid place-content-center ${backDisable && 'cursor-not-allowed'}`}
             >
                 <svg
                     role='img'
@@ -29,7 +29,7 @@ const NavigationButtons = ({backDisable, forWardDisable}) => {
 
             <button
                 onClick={goForward}
-                className={`w-8 h-8 rounded-full bg-gray1 grid place-content-center 
+                className={`w-8 h-8 rounded-full bg-black/70 grid place-content-center 
                 ${forWardDisable && 'cursor-not-allowed'}`}
             >
                 <svg

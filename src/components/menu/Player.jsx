@@ -1,5 +1,5 @@
 import { usePlayerStore } from "@/store/playerStore";
-import { Slider } from "@/components/react/Slider";
+import { Slider } from "@/components/menu/Slider";
 import { useEffect, useRef, useState } from "react";
 
 export const Pause = ({ w = 16, h = 16 }) => (
