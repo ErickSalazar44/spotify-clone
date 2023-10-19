@@ -12,5 +12,5 @@ export const Greating = () => {
         greeting = "Buenas Noches";
     }
 
-    return <h1 className='text-3xl font-bold'>{greeting}</h1>;
+    return <h1 className='text-[32px] font-bold'>!{greeting}!</h1>;
 };

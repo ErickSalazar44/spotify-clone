@@ -11,7 +11,7 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
             >
                 <picture className='h-[50px] w-[50px] flex-none'>
                     <img
-                        className='rounded-[4px]'
+                        className='rounded-[4px] h-[50px] w-[50px] object-cover'
                         src={cover}
                         alt={`Cover of ${title}`}
                     />

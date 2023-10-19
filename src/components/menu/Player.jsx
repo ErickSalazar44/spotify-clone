@@ -36,15 +36,17 @@ const CurrentSong = ({ image, title, artists }) => {
             </picture>
             <div className='flex flex-col justify-center'>
                 <h3 className='font-medium text-sm '>{title}</h3>
-                {artists?.map((artist) => (
-                    <a
-                        key={artist}
-                        href='#'
-                        className="text-txtgray text-xs font-light relative transition-colors after:content-[''] after:w-full hover:after:h-[1px] after:bg-white after:left-0 after:absolute after:bottom-0 hover:text-white after:transition-colors"
-                    >
-                        {artist}
-                    </a>
-                ))}
+                <div className="flex flex-wrap gap-1">
+                    {artists?.map((artist) => (
+                        <a
+                            key={artist}
+                            href='#'
+                            className="text-txtgray text-xs font-light relative transition-colors after:content-[''] after:w-full hover:after:h-[1px] after:bg-white after:left-0 after:absolute after:bottom-0 hover:text-white after:transition-colors"
+                        >
+                            {artist}
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -134,10 +136,10 @@ const VolumenControl = () => {
             <button
                 onClick={handleButtonMute}
                 className='text-gray w-8 h-8 grid place-content-center'>
-                {volumen > 0.7 && volumen <= 1 && <IconVolumenFull />}
-                {volumen > 0.3 && volumen <= 0.7 && <IconVolumenMedio />}
-                {volumen >= 0.01 && volumen <= 0.3 && <IconVolumenBajo />}
-                {volumen === 0 && <IconVolumenMute />}
+                    {volumen <= 0 ? <IconVolumenMute /> :
+                        (volumen < 0.3 ? <IconVolumenBajo /> : (
+                            volumen < 0.7 ? <IconVolumenMedio /> : <IconVolumenFull />
+                        ))}
             </button>
             <Slider
                 defaultValue={[100]}
@@ -264,7 +266,7 @@ const Player = () => {
                         className='bg-white text-black rounded-full p-2'
                         onClick={handleClick}
                     >
-                        {isPlaying ? <Play /> : <Pause />}
+                        {!isPlaying ? <Play /> : <Pause />}
                     </button>
                     <audio ref={audioRef}></audio>
                 </div>

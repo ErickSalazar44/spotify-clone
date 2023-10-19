@@ -49,7 +49,7 @@ const SideBarLeft = () => {
                     </button>
                 </header>
                 <ul className='px-2'>
-                    {playlists.map((playlist) => (
+                    {playlists.slice(6,12).map((playlist) => (
                         <SideMenuCard key={playlist.id} playlist={playlist} isCollapsed={isCollapsed}/>
                     ))}
                 </ul>

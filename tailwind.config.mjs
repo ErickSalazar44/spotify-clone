@@ -11,6 +11,7 @@ export default {
                 card: "#181818",
                 cardHover: "#282828",
                 green: "#1ed760",
+                fondoMain: "var(--fondoMain-color)",
             },
         },
     },
