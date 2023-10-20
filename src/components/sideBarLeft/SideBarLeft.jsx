@@ -1,14 +1,14 @@
 // componentes
 import SideMenuCard from "./SideMenuCard";
+import SideMenuItem from "./SideMenuItem";
 
 // data
 import { playlists } from "@/lib/data";
 
 // icons
-import Home from "@/icons/Home";
-import Library from "@/icons/Library";
-import Search from "@/icons/Search";
-import SideMenuItem from "./SideMenuItem";
+import {Home, Library, Search } from '@/icons/react/SideBarIcons'
+
+// estado global
 import { useSideBarLeftStore } from "@/store/sideBarLeftStore";
 
 const SideBarLeft = () => {

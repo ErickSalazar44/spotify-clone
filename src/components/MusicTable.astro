@@ -2,7 +2,8 @@
 import Time from "@/icons/Time.astro";
 import { type Song } from "@/lib/data";
 import Enlace from "./Enlace.astro";
-import Play from "@/icons/Play.astro";
+// icons
+import { Play } from '@/icons/react/PausePlay'
 
 interface Props {
     songs: Song[];
@@ -24,7 +25,7 @@ const { songs } = Astro.props;
     </thead>
     <div class='w-full h-2'></div>
     <tbody>
-        <tr class="h-[10px]"></tr>
+        <tr class="h-[14px]"></tr>
         {
             songs.map((song, index) => (
                 <tr class='text-gray font-light hover:bg-white/10 rounded group'>
@@ -33,13 +34,13 @@ const { songs } = Astro.props;
                             {index + 1}
                         </span>
                         <span class="text-white hidden group-hover:inline-block">
-                            <Play w="12" h="12"/>
+                            <Play w={12} h={12}/>
                         </span>
                     </td>
                     <td class='px-4 py-1 flex gap-3'>
                         <picture>
                             <img
-                                class='w-10 h-10'
+                                class='w-10 h-10 object-cover'
                                 src={song.image}
                                 alt={song.title}
                             />

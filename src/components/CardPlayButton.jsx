@@ -1,4 +1,4 @@
-import { Pause, Play } from "./menu/Player";
+import { Pause, Play } from "@/icons/react/PausePlay";
 import { usePlayerStore } from "@/store/playerStore"; 
 
 const CardPlayButton = ({ id, size = '3rem' }) => {
