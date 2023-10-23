@@ -19,10 +19,9 @@ const artistsString = artists.join(", ");
 >
     <div
         class=`absolute right-4 bottom-[105px] translate-y-4 transition duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-10 `
+        transition:animate="none"
     >
         <CardPlayButton client:visible id={id} />
-        <span class='absolute w-12 h-12' transition:name=`playlist ${id} play`
-        ></span>
     </div>
     <a
         href={`playlist/${id}`}

@@ -1,5 +1,6 @@
 import { Pause, Play } from "@/icons/react/PausePlay";
 import { usePlayerStore } from "@/store/playerStore"; 
+import { useEffect, useState } from "react";
 
 const CardPlayButton = ({ id, size = '3rem' }) => {
     // constrols -> ESTADO GLOBAL
@@ -10,7 +11,12 @@ const CardPlayButton = ({ id, size = '3rem' }) => {
         setCurrentMusic 
     } = usePlayerStore((state) => state);
 
-    const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id === id
+    const [isPlayingPlaylist, setIsPlayingPlaylist] = useState(false)
+
+    useEffect(() => {
+        setIsPlayingPlaylist(isPlaying && currentMusic?.playlist.id === id)
+    }, [currentMusic, id])
+    
 
     const handleClick = () => {
         if (isPlayingPlaylist) {
@@ -27,11 +33,12 @@ const CardPlayButton = ({ id, size = '3rem' }) => {
             })
     }
 
+
     return (
         <button 
             className={`rounded-full bg-green grid place-content-center text-black hover:scale-[1.05] transition-transform`}
             onClick={handleClick}
-            style={{width: size, height: size,}}
+            style={{width: size, height: size}}
         >
             {isPlayingPlaylist ? <Pause w={20} h={20} /> : <Play w={20} h={20} />}
         </button>

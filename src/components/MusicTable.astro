@@ -17,19 +17,19 @@ const { songs } = Astro.props;
 >
     <thead>
         <tr class='text-gray'>
-            <th class='pl-6 pr-2 py-2 font-light'>#</th>
-            <th class='px-4 py-2 font-light'>Título</th>
-            <th class='px-4 py-2 font-light'>Álbum</th>
-            <th class='px-4 py-2 font-light'><Time /></th>
+            <th class='pl-[22px] py-1 font-light'>#</th>
+            <th class='px-4 py-1 font-semibold text-sm'>Título</th>
+            <th class='px-4 py-1 font-semibold text-sm'>Álbum</th>
+            <th class='px-4 py-1 font-semibold text-sm'><Time /></th>
         </tr>
     </thead>
-    <div class='w-full h-2'></div>
+
     <tbody>
-        <tr class="h-[14px]"></tr>
+        <tr class="h-[18px]"></tr>
         {
             songs.map((song, index) => (
-                <tr class='text-gray font-light hover:bg-white/10 rounded group'>
-                    <td class='pl-6 py-1 w-8 rounded-l'>
+                <tr class='text-gray font-semibold hover:bg-white/10 rounded group py-1'>
+                    <td class='pl-[22px] w-8 rounded-l'>
                         <span class="group-hover:hidden">
                             {index + 1}
                         </span>
@@ -37,10 +37,10 @@ const { songs } = Astro.props;
                             <Play w={12} h={12}/>
                         </span>
                     </td>
-                    <td class='px-4 py-1 flex gap-3'>
-                        <picture>
+                    <td class='px-4 py-[6px] flex items-center gap-3'>
+                        <picture class="w-10 h-10 object-cover">
                             <img
-                                class='w-10 h-10 object-cover'
+                                class='w-10 h-10 '
                                 src={song.image}
                                 alt={song.title}
                             />
@@ -49,15 +49,15 @@ const { songs } = Astro.props;
                             <h3 class='font-light text-white'>
                                 <Enlace>{song.title}</Enlace>
                             </h3>
-                            <span class='text-sm'>
+                            <span class='text-sm font-light'>
                                 {song.artists.join(", ")}
                             </span>
                         </div>
                     </td>
-                    <td class='px-4 py-1 text-sm text-white'>
+                    <td class='px-4 text-sm font-light'>
                         <Enlace>{song.album}</Enlace>
                     </td>
-                    <td class='px-4 py-1 text-sm w-28 rounded-r'>{song.duration}</td>
+                    <td class='px-4 text-sm w-28 rounded-r'>{song.duration}</td>
                 </tr>
             ))
         }

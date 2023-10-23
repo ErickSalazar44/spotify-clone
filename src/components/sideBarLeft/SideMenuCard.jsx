@@ -26,14 +26,14 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
                 {!isCollapsed && (
                     <>                    
                         <div className='flex flex-col truncate justify-center'>
-                            <h4 className={`font-semibold text-[15px] ${playlist.id == song?.albumId ? 'text-green' : 'text-txt'}`}>
+                            <h4 className={`font-semibold text-[15px] ${id == song?.albumId ? 'text-green' : 'text-txt'}`}>
                                 {title}
                             </h4>
                             <span className='text-xs font-normal text-txtgray'>
                                 {artistsString}
                             </span>
                         </div>
-                        <div className={`ml-auto text-green ${playlist.id == song?.albumId && isPlaying ? 'opacity-100' : 'opacity-0'}`}>
+                        <div className={`ml-auto text-green ${id == song?.albumId && isPlaying ? 'opacity-100' : 'opacity-0'}`}>
                             <IconVolumenFull/>
                         </div>
                     </>

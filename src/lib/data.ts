@@ -23,7 +23,7 @@ export const playlists: Playlist[] = [
         id: '2',
         albumId: 2,
         title: "Lo-Fi Chill Session",
-        color: colors.green,
+        color: colors.indigo,
         cover:
             "https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187",
         artists: ["Kupla", "Blue Fox"],
@@ -41,7 +41,7 @@ export const playlists: Playlist[] = [
         id: '4',
         albumId: 4,
         title: "Blue Note Study Time",
-        color: colors.blue,
+        color: colors.green,
         cover:
             "https://f4.bcbits.com/img/a1962013209_16.jpg",
         artists: ["Raimu", "Yasumu"],
@@ -68,7 +68,7 @@ export const playlists: Playlist[] = [
         id: '7',
         albumId: 7,
         title: "Lofi hip hop",
-        color: colors.purple,
+        color: colors.teal,
         cover:
             "https://i.pinimg.com/550x/42/2e/09/422e095f9aa6c6ea1eb1cd803b6d993b.jpg",
         artists: ["WFS", "lofi"],
@@ -77,7 +77,7 @@ export const playlists: Playlist[] = [
         id: '8',
         albumId: 8,
         title: "Inspiring Piano",
-        color: colors.blue,
+        color: colors.lila,
         cover:
             "https://i1.sndcdn.com/artworks-000601275661-1iia6q-t500x500.jpg",
         artists: ["Larsen", "Candlelight"],
@@ -86,7 +86,7 @@ export const playlists: Playlist[] = [
         id: '9',
         albumId: 9,
         title: "Japon City",
-        color: colors.blue,
+        color: colors.yellow,
         cover:
             "https://i.ytimg.com/vi/Cv7Be37b04E/maxresdefault.jpg",
         artists: ["Japan City", "Lofi Mix"],
@@ -95,7 +95,7 @@ export const playlists: Playlist[] = [
         id: '10',
         albumId: 10,
         title: "Arcade Night",
-        color: colors.purple,
+        color: colors.pink,
         cover:
             "https://public-files.gumroad.com/csgojqb02yq2mdfv61y96gxm58lh",
         artists: ["Aika", "Bao", "Kotori"],
@@ -104,7 +104,7 @@ export const playlists: Playlist[] = [
         id: '11',
         albumId: 11,
         title: "Yung Lean",
-        color: colors.purple,
+        color: colors.green,
         cover:
             "https://lastfm.freetls.fastly.net/i/u/300x300/3911ac651c87ddc0b744277bba12e740.jpg",
         artists: ["lofi, Yung Lean"],
@@ -113,7 +113,7 @@ export const playlists: Playlist[] = [
         id: '12',
         albumId: 12,
         title: "Covered Link",
-        color: colors.blue,
+        color: colors.gray,
         cover:
             "https://f4.bcbits.com/img/a4172390638_10.jpg",
         artists: ["Shayne Orok", "CInui Toko_Machita"],

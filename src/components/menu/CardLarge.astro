@@ -1,7 +1,11 @@
 ---
 // data
 import type { Playlist } from "@/lib/data";
+// componentes 
 import CardPlayButton from "@/components/CardPlayButton"
+import SoundMove from "@/components/menu/SoundMove";
+// icons 
+import SoundMoveIcon from "@/icons/SoundMoveIcon.astro"
 
 
 interface Props {
@@ -21,6 +25,7 @@ const { id, albumId, title, color, cover, artists } = playlist;
         href={`playlist/${id}`}
         class='flex transition-all duration-300 overflow-hidden items-center gap-5 rounded-md shadow-lg hover:shadow-xl outline-none bg-white/10 hover:bg-white/20 focus:bg-white/20'
         transition:name={`playlist ${id} box`}
+        data-color={color.dark}
         >
         <picture class='block h-20 w-20'>
             <img
@@ -34,9 +39,12 @@ const { id, albumId, title, color, cover, artists } = playlist;
             {title}
         </div>
     </a>
-    <div
-        class='max-w-full absolute top-1/2 -translate-y-1/2 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50'
-    >
-        <CardPlayButton id={id} client:visible/>
+    <div class='max-w-full absolute top-1/2 -translate-y-1/2 right-3 z-10'>
+        <SoundMove id={id} client:load transition:name="sound-move" transition:persist>
+            <SoundMoveIcon/>
+        </SoundMove>
+        <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+            <CardPlayButton id={id} client:load transition:persist/>
+        </div>
     </div>
 </div>

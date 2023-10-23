@@ -1,0 +1,56 @@
+<div class='flex gap-[2px] items-end justify-center w-4 h-4 overflow-hidden'>
+    <span class='animation-span2 bg-green'></span>
+    <span class='animation-span bg-green'></span>
+    <span class='animation-span2 bg-green' style={{ animationDelay: "100ms" }}
+    ></span>
+    <span class='animation-span bg-green' style={{ animationDelay: "20ms" }}
+    ></span>
+</div>
+
+<style>
+    span {
+        display: inline-block;
+        width: 2px;
+        height: 1rem;
+    }
+
+    .animation-span {
+        animation: changeHeight 1s infinite linear;
+    }
+
+    .animation-span2 {
+        animation: changeHeight2 1s infinite linear;
+    }
+
+    @keyframes changeHeight {
+        0%,
+        100% {
+            height: 4px;
+        }
+        25% {
+            height: 7px;
+        }
+        50% {
+            height: 14px;
+        }
+        75% {
+            height: 9px;
+        }
+    }
+
+    @keyframes changeHeight2 {
+        0%,
+        100% {
+            height: 5px;
+        }
+        25% {
+            height: 6px;
+        }
+        50% {
+            height: 2px;
+        }
+        75% {
+            height: 15px;
+        }
+    }
+</style>
