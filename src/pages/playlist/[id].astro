@@ -6,9 +6,9 @@ import { allPlaylists, playlists, songs } from "../../lib/data";
 
 // componentes
 import NavigationButtons from "@/components/menu/NavigationButtons";
-import Enlace from "../../components/Enlace.astro";
-import MusicTable from "@/components/MusicTable.astro";
-import CardPlayButton from "@/components/CardPlayButton";
+import Enlace from "../../components/Enlace";
+import MusicTable from "@/components/menu/songPage/MusicTable";
+import CardPlayButton from "@/components/menu/CardPlayButton";
 
 // id Params
 const { id } = Astro.params;
@@ -21,14 +21,13 @@ const playListSongs = songs.filter(
     (song) => song.albumId === playlist?.albumId
 );
 
-// bg
 const bgFondo = {
     backgroundColor: playlist?.color.accent,
 };
 
 ---
 
-<Layout title='Spotify Clone'>
+<Layout title={playlist ? playlist.title : "Spotify Astro"}>
     <div
         class='relative flex flex-col h-full bg-base min-h-full rounded-lg overflow-hidden'
         transition:name={`playlist ${playlist?.id} box`}
@@ -38,9 +37,7 @@ const bgFondo = {
         <div class='absolute w-full h-full gradiantFondo opacity-[94%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
-        <nav class=' sticky top-0 px-6 py-4 h-16'>
-            <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
-        </nav>
+        <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
 
         <!-- Album -->
         <header class="px-6 py-5 flex gap-8 items-end">
@@ -84,7 +81,7 @@ const bgFondo = {
             <div transition:animate=`none` class=" py-7 relative z-10">
                 <CardPlayButton client:visible id={id} size="3.5rem"/>
             </div>
-            <MusicTable songs={playListSongs}/>
+            <MusicTable songs={playListSongs} client:visible/>
         </article>    
     </div>
 </Layout>

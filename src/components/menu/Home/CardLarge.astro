@@ -2,7 +2,7 @@
 // data
 import type { Playlist } from "@/lib/data";
 // componentes 
-import CardPlayButton from "@/components/CardPlayButton"
+import CardPlayButton from "@/components/menu/CardPlayButton"
 import SoundMove from "@/components/menu/SoundMove";
 // icons 
 import SoundMoveIcon from "@/icons/SoundMoveIcon.astro"
@@ -43,7 +43,7 @@ const { id, albumId, title, color, cover, artists } = playlist;
         <SoundMove id={id} client:load transition:name="sound-move" transition:persist>
             <SoundMoveIcon/>
         </SoundMove>
-        <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+        <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ">
             <CardPlayButton id={id} client:load transition:persist/>
         </div>
     </div>

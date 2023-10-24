@@ -1,6 +1,6 @@
 ---
 // components
-import Player from "@/components/menu/Player";
+import Player from "@/components/player/Player";
 import SideBarLeft from "@/components/sideBarLeft/SideBarLeft";
 
 // ViewTransition Api
@@ -11,13 +11,16 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const {id} = Astro.params
+
 ---
 
 <!doctype html>
 <html lang='en'>
     <head>
         <meta charset='UTF-8' />
-        <meta name='description' content='Astro description' />
+        <meta name='description' content='Explora y disfruta de una experiencia de reproducción de música excepcional en nuestro sitio. Descubre tus canciones favoritas, crea listas de reproducción personalizadas y sumérgete en un mundo de sonidos. ¡Únete a nosotros y lleva la música a todas partes!'/>
         <meta name='viewport' content='width=device-width' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
@@ -45,6 +48,7 @@ const { title } = Astro.props;
                 class='[grid-area:now-player] h-[72px] flex justify-between items-center'
             >
                 <Player
+                    id={id}                
                     client:load
                     transition:name='media-player'
                     transition:persist

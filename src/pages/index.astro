@@ -5,13 +5,13 @@ import Layout from "../layouts/Layout.astro";
 import { playlists } from "@/lib/data";
 
 // componentes
-import PlayListItemCard from "@/components/menu/PlayListItemCard.astro";
-import { Greating } from "@/components/menu/Greating";
-import CardLarge from "@/components/menu/CardLarge.astro";
-import PageHeader from "@/components/menu/PageHeader.astro";
+import PlayListItemCard from "@/components/menu/Home/PlayListItemCard.astro";
+import { Greating } from "@/components/menu/Home/Greating";
+import CardLarge from "@/components/menu/Home/CardLarge.astro";
+import NavigationButtons from "@/components/menu/NavigationButtons";
 ---
 
-<Layout title='Spotify Clone'>
+<Layout title='Spotify Astro'>
     <div
         id='playlist-container'
         class='relative transition-colors duration-1000 bg-base min-h-full rounded-lg'
@@ -26,7 +26,7 @@ import PageHeader from "@/components/menu/PageHeader.astro";
         </div>
 
         <!-- PageHeader -->
-        <PageHeader />
+        <NavigationButtons client:load backDisable={true} forWardDisable={false}/>
         <section class='relative z-10 px-6 flex flex-col gap-6'>
             <div>
                 <!-- Saludos -->
@@ -73,3 +73,4 @@ import PageHeader from "@/components/menu/PageHeader.astro";
         }
     })
 </script>
+@/components/menu/Home/Greating

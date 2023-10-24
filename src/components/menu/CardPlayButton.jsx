@@ -14,6 +14,7 @@ const CardPlayButton = ({ id, size = '3rem' }) => {
     const [isPlayingPlaylist, setIsPlayingPlaylist] = useState(false)
 
     useEffect(() => {
+        if(currentMusic.playlist === null) return
         setIsPlayingPlaylist(isPlaying && currentMusic?.playlist.id === id)
     }, [currentMusic, id])
     
@@ -36,7 +37,7 @@ const CardPlayButton = ({ id, size = '3rem' }) => {
 
     return (
         <button 
-            className={`rounded-full bg-green grid place-content-center text-black hover:scale-[1.05] transition-transform`}
+            className={`shadow-[0_4px_90px_rgba(0,0,0,.5)] rounded-full bg-green grid place-content-center text-black hover:scale-[1.05] transition-transform`}
             onClick={handleClick}
             style={{width: size, height: size}}
         >
