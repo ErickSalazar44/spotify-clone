@@ -9,7 +9,7 @@ interface Props {
 
 const { playlist } = Astro.props;
 
-const { id, albumId, title, color, cover, artists } = playlist;
+const { id, title, cover, artists } = playlist;
 
 const artistsString = artists.join(", ");
 ---
@@ -21,7 +21,7 @@ const artistsString = artists.join(", ");
         class=`absolute right-4 bottom-[105px] translate-y-4 transition duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-10 `
         transition:animate="none"
     >
-        <CardPlayButton client:visible id={id} />
+        <CardPlayButton id={id} client:visible />
     </div>
     <a
         href={`playlist/${id}`}

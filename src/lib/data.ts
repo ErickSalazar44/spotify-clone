@@ -168,15 +168,6 @@ export const songs: Song[] = [
     {
         "id": 3,
         "albumId": 1,
-        "title": "Skyline Serenade",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
-        "duration": "3:50"
-    },
-    {
-        "id": 4,
-        "albumId": 1,
         "title": "Urban Echoes",
         "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
         "artists": ["LoFi Dreamer"],
@@ -184,7 +175,7 @@ export const songs: Song[] = [
         "duration": "3:30"
     },
     {
-        "id": 5,
+        "id": 4,
         "albumId": 1,
         "title": "Night's End",
         "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
@@ -229,25 +220,7 @@ export const songs: Song[] = [
         "duration": "3:30"
     },
     {
-        "id": 5,
-        "albumId": 2,
-        "title": "Night Drive",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
-        "artists": ["Urban Nocturne"],
-        "album": "Midnight Tales",
-        "duration": "4:20"
-    },
-    {
         "id": 1,
-        "albumId": 3,
-        "title": "Lunar",
-        "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
-        "artists": ["Tenno"],
-        "album": "Study Session",
-        "duration": "3:40"
-    },
-    {
-        "id": 2,
         "albumId": 3,
         "title": "Go go go!",
         "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
@@ -256,7 +229,7 @@ export const songs: Song[] = [
         "duration": "3:20"
     },
     {
-        "id": 3,
+        "id": 2,
         "albumId": 3,
         "title": "Keep focus!",
         "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
@@ -265,7 +238,7 @@ export const songs: Song[] = [
         "duration": "2:40"
     },
     {
-        "id": 4,
+        "id": 3,
         "albumId": 3,
         "title": "JavaScript is the way",
         "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
@@ -274,7 +247,7 @@ export const songs: Song[] = [
         "duration": "3:10"
     },
     {
-        "id": 5,
+        "id": 4,
         "albumId": 3,
         "title": "No more TypeScript for me",
         "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
@@ -285,15 +258,6 @@ export const songs: Song[] = [
     {
         "id": 1,
         "albumId": 4,
-        "title": "Lunar",
-        "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
-        "artists": ["Tenno"],
-        "album": "Study Session",
-        "duration": "3:40"
-    },
-    {
-        "id": 2,
-        "albumId": 4,
         "title": "Go go go!",
         "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
         "artists": ["Tenno"],
@@ -301,7 +265,7 @@ export const songs: Song[] = [
         "duration": "3:20"
     },
     {
-        "id": 3,
+        "id": 2,
         "albumId": 4,
         "title": "Keep focus!",
         "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
@@ -310,7 +274,7 @@ export const songs: Song[] = [
         "duration": "2:40"
     },
     {
-        "id": 4,
+        "id": 3,
         "albumId": 4,
         "title": "JavaScript is the way",
         "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
@@ -319,7 +283,7 @@ export const songs: Song[] = [
         "duration": "3:10"
     },
     {
-        "id": 5,
+        "id": 4,
         "albumId": 4,
         "title": "No more TypeScript for me",
         "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
@@ -364,15 +328,6 @@ export const songs: Song[] = [
         "duration": "3:30"
     },
     {
-        "id": 5,
-        "albumId": 5,
-        "title": "Night's End",
-        "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
-        "duration": "4:20"
-    },
-    {
         "id": 1,
         "albumId": 6,
         "title": "Moonlit Walk",
@@ -407,15 +362,6 @@ export const songs: Song[] = [
         "artists": ["WFS", "Nadav Cohen"],
         "album": "Like a Necessity",
         "duration": "2:49"
-    },
-    {
-        "id": 5,
-        "albumId": 6,
-        "title": "Night's End",
-        "image": "https://f4.bcbits.com/img/a0363730459_16.jpg",
-        "artists": ["WFS", "Nadav Cohen"],
-        "album": "Like a Necessity",
-        "duration": "2:29"
     },
     {
         "id": 1,
@@ -546,20 +492,20 @@ export const songs: Song[] = [
     {
         "id": 1,
         "albumId": 11,
-        "title": "Mert Can, Robbe",
-        "image": "https://lastfm.freetls.fastly.net/i/u/300x300/3911ac651c87ddc0b744277bba12e740.jpg",
-        "artists": ["lofi, Young Lean"],
-        "album": "Yung Lean",
-        "duration": "2:25"
-    },
-    {
-        "id": 2,
-        "albumId": 11,
         "title": "Young Lean Summer Time",
         "image": "https://lastfm.freetls.fastly.net/i/u/300x300/3911ac651c87ddc0b744277bba12e740.jpg",
         "artists": ["lofi, Young Lean"],
         "album": "Yung Lean",
         "duration": "3:09"
+    },
+    {
+        "id": 2,
+        "albumId": 11,
+        "title": "Mert Can, Robbe",
+        "image": "https://lastfm.freetls.fastly.net/i/u/300x300/3911ac651c87ddc0b744277bba12e740.jpg",
+        "artists": ["lofi, Young Lean"],
+        "album": "Yung Lean",
+        "duration": "2:25"
     },
     {
         "id": 1,

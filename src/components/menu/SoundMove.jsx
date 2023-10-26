@@ -1,24 +1,28 @@
-// estado global
-import { usePlayerStore } from "@/store/playerStore";
-// react 
-import { useEffect, useState } from 'react'
+import useSoundMove from '@/hooks/useSoundMove'
 
-const SoundMove = ({ id, children }) => {
-    // Song en reproduccion
-    const { song } = usePlayerStore((state) => state.currentMusic);
-    const isPlaying = usePlayerStore((state) => state.isPlaying);
+const SoundMove = ({ id, forId = false }) => {
 
-    const [visible, setVisible] = useState(false)
-
-    useEffect(() => {
-        setVisible(id == song?.albumId && isPlaying)
-    }, [id, song, isPlaying ])
-    
+    const visible = useSoundMove(id, forId)
 
     return (
-        <div className={`absolute top-3 right-3 gap-[2px] items-end justify-center w-4 h-4 overflow-hidden ${ visible ? 'flex' : 'hidden'}`}>
-            {children}
-        </div>
+        <span
+            className={`items-end justify-center w-4 h-4 overflow-hidden ${
+                visible ? "flex" : "hidden"
+            }`}
+        >
+            <div className='flex gap-[2px] items-end justify-center w-4 h-4 overflow-hidden'>
+                <span className='inline-block w-[2px] h-4 animate-soundMove2 bg-green'></span>
+                <span className='inline-block w-[2px] h-4 animate-soundMove bg-green'></span>
+                <span
+                    className='inline-block w-[2px] h-4 animate-soundMove2 bg-green'
+                    style={{ animationDelay: "100ms" }}
+                ></span>
+                <span
+                    className='inline-block w-[2px] h-4 animate-soundMove bg-green'
+                    style={{ animationDelay: "20ms" }}
+                ></span>
+            </div>
+        </span>
     );
 };
 

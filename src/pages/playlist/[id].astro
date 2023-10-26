@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 // data
-import { allPlaylists, playlists, songs } from "../../lib/data";
+import { allPlaylists, songs } from "../../lib/data";
 
 // componentes
 import NavigationButtons from "@/components/menu/NavigationButtons";
@@ -37,7 +37,7 @@ const bgFondo = {
         <div class='absolute w-full h-full gradiantFondo opacity-[94%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
+        <NavigationButtons client:visible forWardDisable={true} backDisable={false}/>
 
         <!-- Album -->
         <header class="px-6 py-5 flex gap-8 items-end">
@@ -78,10 +78,13 @@ const bgFondo = {
 
         <!-- body -->
         <article class="px-6 bg-black/30 relative h-full">            
-            <div transition:animate=`none` class=" py-7 relative z-10">
+            <div class=" py-7 relative z-10">
                 <CardPlayButton client:visible id={id} size="3.5rem"/>
             </div>
-            <MusicTable songs={playListSongs} client:visible/>
+            <MusicTable
+                songs={playListSongs} 
+                client:visible 
+            />
         </article>    
     </div>
 </Layout>

@@ -1,47 +1,21 @@
 import { Pause, Play } from "@/icons/react/PausePlay";
-import { usePlayerStore } from "@/store/playerStore"; 
-import { useEffect, useState } from "react";
+import usePlaylistPlaybackControl from "@/hooks/usePlaylistPlaybackControl";
 
-const CardPlayButton = ({ id, size = '3rem' }) => {
-    // constrols -> ESTADO GLOBAL
-    const { 
-        currentMusic, 
-        isPlaying, 
-        setIsPlaying, 
-        setCurrentMusic 
-    } = usePlayerStore((state) => state);
+const CardPlayButton = ({ id, size = "3rem" }) => {
 
-    const [isPlayingPlaylist, setIsPlayingPlaylist] = useState(false)
-
-    useEffect(() => {
-        if(currentMusic.playlist === null) return
-        setIsPlayingPlaylist(isPlaying && currentMusic?.playlist.id === id)
-    }, [currentMusic, id])
-    
-
-    const handleClick = () => {
-        if (isPlayingPlaylist) {
-            setIsPlaying(!isPlaying)
-            return 
-        }
-
-        fetch(`/api/get-info-playlist.json?id=${id}`)
-            .then(res => res.json())
-            .then(data => {
-                const { songs, playlist } = data 
-                setIsPlaying(true)
-                setCurrentMusic( {songs, playlist, song: songs[0]})
-            })
-    }
-
+    const [isPlayingPlaylist, handleClick] = usePlaylistPlaybackControl(id)
 
     return (
-        <button 
+        <button
             className={`shadow-[0_4px_90px_rgba(0,0,0,.5)] rounded-full bg-green grid place-content-center text-black hover:scale-[1.05] transition-transform`}
             onClick={handleClick}
-            style={{width: size, height: size}}
+            style={{ width: size, height: size }}
         >
-            {isPlayingPlaylist ? <Pause w={20} h={20} /> : <Play w={20} h={20} />}
+            {isPlayingPlaylist ? (
+                <Pause w={20} h={20} />
+            ) : (
+                <Play w={20} h={20} />
+            )}
         </button>
     );
 };

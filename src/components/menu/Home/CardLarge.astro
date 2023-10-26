@@ -4,19 +4,14 @@ import type { Playlist } from "@/lib/data";
 // componentes 
 import CardPlayButton from "@/components/menu/CardPlayButton"
 import SoundMove from "@/components/menu/SoundMove";
-// icons 
-import SoundMoveIcon from "@/icons/SoundMoveIcon.astro"
-
 
 interface Props {
     playlist: Playlist
 }
-
 const { playlist } = Astro.props
+const { id, title, color, cover } = playlist;
 
-const { id, albumId, title, color, cover, artists } = playlist;
-
-//TODO por el momendo vamos a duplicar las canciones hasta agregar nuevas 
+//TODO por el momendo no duplicare las canciones hasta agregar nuevas 
 // se usara desde la cancion 6 a la 12
 
 ---
@@ -35,16 +30,19 @@ const { id, albumId, title, color, cover, artists } = playlist;
                 transition:name=`playlist ${id} image`
             />
         </picture>
-        <div class='font-bold block' transition:name=`playlist ${id} title`>
+        <div 
+            class='font-bold block' 
+            transition:name=`playlist ${id} title`
+        >
             {title}
         </div>
     </a>
     <div class='max-w-full absolute top-1/2 -translate-y-1/2 right-3 z-10'>
-        <SoundMove id={id} client:load transition:name="sound-move" transition:persist>
-            <SoundMoveIcon/>
-        </SoundMove>
+        <div class="absolute top-3 right-3 gap-[2px] ">
+            <SoundMove id={id} client:load/>            
+        </div>
         <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ">
-            <CardPlayButton id={id} client:load transition:persist/>
+            <CardPlayButton  id={id} client:visible />
         </div>
     </div>
 </div>

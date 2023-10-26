@@ -1,10 +1,10 @@
-import { usePlayerStore } from "@/store/playerStore"; // estado global
-import { IconVolumenFull } from "@/icons/react/VolumeControl" // icons
+import { usePlayerStore } from "@/store/playerStore"; // Estado global
+import { IconVolumenFull } from "@/icons/react/VolumeControl" // Icons
 
 const SideMenuCard = ({ playlist, isCollapsed }) => {
-    // Song en reproduccion
-    const { song } = usePlayerStore(state => state.currentMusic)
-    const isPlaying = usePlayerStore(state => state.isPlaying)
+
+    const { song } = usePlayerStore(state => state.currentMusic) // Song en reproduccion
+    const isPlaying = usePlayerStore(state => state.isPlaying) // Verificar si se esta reproduciendo 
 
     const { id, title, cover, artists } = playlist;
 
@@ -26,14 +26,16 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
                 {!isCollapsed && (
                     <>                    
                         <div className='flex flex-col truncate justify-center'>
-                            <h4 className={`font-semibold text-[15px] ${id == song?.albumId ? 'text-green' : 'text-txt'}`}>
+                            <h4 className={`font-semibold text-[15px] 
+                                ${Number(id) === song?.albumId ? 'text-green' : 'text-txt'}`}
+                            >
                                 {title}
                             </h4>
-                            <span className='text-xs font-normal text-txtgray'>
-                                {artistsString}
-                            </span>
+                            <span className='text-xs font-normal text-txtgray'>{artistsString}</span>
                         </div>
-                        <div className={`ml-auto text-green ${id == song?.albumId && isPlaying ? 'opacity-100' : 'opacity-0'}`}>
+                        <div className={`ml-auto text-green 
+                            ${Number(id) === song?.albumId && isPlaying ? 'opacity-100' : 'opacity-0'}`}
+                        >
                             <IconVolumenFull/>
                         </div>
                     </>

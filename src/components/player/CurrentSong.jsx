@@ -1,6 +1,8 @@
-const CurrentSong = ({ image, title, artists }) => {
+import Enlace from "../Enlace";
+
+const CurrentSong = ({ image, title, artists, albumId }) => {
     return (
-        <div className='flex flex-1 items-center gap-4 relative overflow-hidden'>
+        <section className='flex sm:flex-1 items-center sm:gap-2 lg:gap-4 relative overflow-hidden'>
             <picture className='w-14 h-14  rounded-md shadow-lg overflow-hidden'>
                 <img
                     src={image}
@@ -8,21 +10,19 @@ const CurrentSong = ({ image, title, artists }) => {
                     className='object-cover aspect-square'
                 />
             </picture>
-            <div className='flex flex-col justify-center'>
-                <h3 className='font-medium text-sm '>{title}</h3>
-                <div className='flex flex-wrap gap-1'>
+            <article className='hidden sm:flex sm:flex-col sm:justify-center'>
+                <h3 className='font-medium sm:text-xs lg:text-sm '>{title}</h3>
+                <ul className='flex flex-wrap gap-1 text-txtgray text-xs font-light'>
                     {artists?.map((artist) => (
-                        <a
-                            key={artist}
-                            href='#'
-                            className="text-txtgray text-xs font-light relative transition-colors after:content-[''] after:w-full hover:after:h-[1px] after:bg-white after:left-0 after:absolute after:bottom-0 hover:text-white after:transition-colors"
-                        >
-                            {artist}
-                        </a>
+                        <li key={artist}>
+                            <Enlace ruta={`/playlist/${albumId}`}>
+                                {artist}
+                            </Enlace>
+                        </li>
                     ))}
-                </div>
-            </div>
-        </div>
+                </ul>
+            </article>
+        </section>
     );
 };
 

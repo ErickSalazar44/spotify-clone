@@ -1,15 +1,15 @@
 import { create } from "zustand";
 
 export const usePlayerStore = create((set) => ({
-    // ESTADO PARA PAUSAR MUSICA
+    // PAUSAR MUSICA
     isPlaying: false,
     setIsPlaying: (isPlaying) => set({ isPlaying }),
 
-    // ESTADO PARA REPRODUCIR MUSICA
+    // REPRODUCIR MUSICA
     currentMusic: { playlist: null, song: null, songs: [] },
     setCurrentMusic: (currentMusic) => set({ currentMusic }),
 
-    // ESTADO PARA CONTROLAR EL VOLUMEN
+    // CONTROLAR EL VOLUMEN
     volumen: 1,
     setVolumen: (volumen) => set({ volumen }),
 }));

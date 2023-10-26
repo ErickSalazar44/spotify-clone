@@ -1,5 +1,5 @@
 ---
-// components
+// Components
 import Player from "@/components/player/Player";
 import SideBarLeft from "@/components/sideBarLeft/SideBarLeft";
 
@@ -11,51 +11,56 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const { id } = Astro.params
 
-const {id} = Astro.params
-
+const description = 'Explora y disfruta de una experiencia de reproducción de música excepcional en nuestro sitio. Descubre tus canciones favoritas, crea listas de reproducción personalizadas y sumérgete en un mundo de sonidos. ¡Únete a nosotros y lleva la música a todas partes!'
 ---
 
 <!doctype html>
 <html lang='en'>
     <head>
         <meta charset='UTF-8' />
-        <meta name='description' content='Explora y disfruta de una experiencia de reproducción de música excepcional en nuestro sitio. Descubre tus canciones favoritas, crea listas de reproducción personalizadas y sumérgete en un mundo de sonidos. ¡Únete a nosotros y lleva la música a todas partes!'/>
+        <meta name='description' content={description}/>
         <meta name='viewport' content='width=device-width' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
         <title>{title}</title>
         <ViewTransitions fallback='none' />
-        <link rel='stylesheet' href='/fonts/fonts.css' />
+        <link rel='stylesheet' href='/fonts/fonts.css'/>
     </head>
-    <body>
-        <div id='app' class='relativo h-screen p-2 gap-2'>
-            <aside
-                class='[grid-area:left-sidebar] flex flex-col overflow-y-auto'
-            >
-                <SideBarLeft
-                    client:load
-                    transition:persist
-                    transition:name='sidebar-left'
-                />
-            </aside>
+    <body id="app" class='relativo h-screen pt-2 sm:p-2 gap-2'>
 
-            <main class='[grid-area:main-view] rounded-lg overflow-y-auto'>
-                <slot />
-            </main>
+        <!-- S I D E B A R L E F T -->
+        <aside class='hidden md:[grid-area:left-sidebar] md:flex flex-col overflow-y-auto'>
+            <SideBarLeft
+                client:load
+                transition:persist
+                transition:name='sidebar-left'
+            />
+        </aside>
 
-            <footer
-                class='[grid-area:now-player] h-[72px] flex justify-between items-center'
-            >
-                <Player
-                    id={id}                
-                    client:load
-                    transition:name='media-player'
-                    transition:persist
-                />
-            </footer>
-        </div>
-        <style>
+        <!-- M A I N  -->
+        <main class='[grid-area:main-view] rounded-lg overflow-y-auto'>
+            <slot />
+        </main>
+
+        <!-- C O N T R O L - S O N G  -->
+        <footer class='[grid-area:now-player] h-[72px] flex justify-between items-center'>
+            <Player 
+                id={id} 
+                client:load 
+                transition:name='media-player' 
+                transition:persist
+            />
+        </footer>
+
+        <style is:global>
+            html {
+                font-family: "CircularStd", system-ui, sans-serif;
+                background: #000;
+                color-scheme: dark;
+            }
+
             #app {
                 display: grid;
                 grid-template-areas:
@@ -64,14 +69,38 @@ const {id} = Astro.params
                 grid-template-columns: auto 1fr;
                 grid-template-rows: 1fr auto;
             }
-        </style>
 
-        <style is:global>
-            html {
-                font-family: "CircularStd", system-ui, sans-serif;
-                background: #000;
-                color-scheme: dark;
+            /* Styles para Ayuda visual en los iconos  */
+            .context {
+                position: relative;
+                transition: opacity 0.3s, visibility 0.3s;
+                z-index: 100;
             }
+
+            .context:before {
+                opacity: 0;
+                color: white;
+                padding: 9px 9px 7px 9px;
+                background: #242424;
+                border-radius: 4px;
+                line-height: 1;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+                transition: opacity 0.3s, visibility 0.3s;
+                font-size: 14px;
+                font-weight: 600;
+                position: absolute;
+                visibility: hidden;
+                text-wrap: nowrap;
+                z-index: 100;
+            }
+
+            .context:hover::before {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .context-top:before  { content: attr(data-content) }
+            .context-top2:before { content: attr(data-content2) }
         </style>
     </body>
 </html>

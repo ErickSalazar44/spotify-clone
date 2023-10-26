@@ -14,6 +14,24 @@ export default {
                 green: "#1ed760",
                 fondoMain: "var(--fondoMain-color)",
             },
+            keyframes: {
+                soundMove: {
+                    "0%, 100%": { height: "4px" },
+                    "25%": { height: "7px" },
+                    "50%": { height: "14px" },
+                    "75%": { height: "9px" },
+                },
+                soundMove2: {
+                    "0%, 100%": { height: "5px" },
+                    "25%": { height: "6px" },
+                    "50%": { height: "2px" },
+                    "75%": { height: "15px" },
+                },
+            },
+            animation: {
+                soundMove: "soundMove 1s infinite linear",
+                soundMove2: "soundMove2 1s infinite linear",
+            },
         },
     },
     plugins: [],

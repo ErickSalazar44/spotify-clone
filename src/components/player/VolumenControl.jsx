@@ -21,10 +21,12 @@ const VolumenControl = () => {
     };
 
     return (
-        <div className='flex justify-center gap-x-2'>
+        <div className='flex justify-center w-14 sm:w-auto sm:gap-x-2 '>
             <button
                 onClick={handleButtonMute}
-                className='text-gray w-8 h-8 grid place-content-center'
+                className={`text-gray before:top-[-36px] before:-left-4 w-8 h-8 grid place-content-center md:context  ${volumen !== 0 ? 'md:context-top' : 'md:context-top2' }`}
+                data-content='Silenciar'
+                data-content2='No Silenciar'
             >
                 {volumen <= 0 ? (
                     <IconVolumenMute />
@@ -40,7 +42,7 @@ const VolumenControl = () => {
                 defaultValue={[100]}
                 max={100}
                 min={0}
-                className='w-[93px]'
+                className='sm:w-[93px]'
                 value={[volumen * 100]}
                 onValueChange={(value) => {
                     const [newValue] = value;

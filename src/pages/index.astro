@@ -9,68 +9,68 @@ import PlayListItemCard from "@/components/menu/Home/PlayListItemCard.astro";
 import { Greating } from "@/components/menu/Home/Greating";
 import CardLarge from "@/components/menu/Home/CardLarge.astro";
 import NavigationButtons from "@/components/menu/NavigationButtons";
+
+// color inicial
+const gradiantPorDefecto = '#134e4a'
 ---
 
 <Layout title='Spotify Astro'>
-    <div
-        id='playlist-container'
-        class='relative transition-colors duration-1000 bg-base min-h-full rounded-lg'
-    >
+    <div class='relative transition-colors duration-1000 bg-base min-h-full rounded-lg'>
         <!-- GradiantFondo -->
         <div
             id='gradiantFondo'
-            class='absolute w-full h-[304px] bg-fondoMain transition-colors duration-700 ease-in-out'
-            style='--fondoMain-color:#134e4a'
-        >
-            <div class='absolute inset-0 bg-gradient-to-t from-base via-base/80'></div>
-        </div>
+            class='absolute w-full h-[304px] bg-fondoMain transition-colors duration-700 ease-in-out inset-0 bg-gradient-to-t from-base via-base/80'
+            style=`--fondoMain-color: ${gradiantPorDefecto}`
+        ></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load backDisable={true} forWardDisable={false}/>
-        <section class='relative z-10 px-6 flex flex-col gap-6'>
-            <div>
+        <NavigationButtons client:visible backDisable={true} forWardDisable={false}/>
+        <section class='relative z-10 px-4 md:px-6 flex flex-col gap-6'>
+            <header>
                 <!-- Saludos -->
                 <Greating />
+
                 <!-- CardLarge -->
-                <div class='grid gap-y-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-4'>
-                    { playlists
-                        .slice(6, 12)
-                        .map((playlist) => (
+                <div id='cardLarge-container' class='grid gap-y-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-4'>
+                    { 
+                        playlists.slice(6, 12).map((playlist) => (
                             <CardLarge playlist={playlist} />
                         ))
                     }
                 </div>
-            </div>
+            </header>
 
-            <div>
+            <footer>
                 <h2 class='text-2xl font-bold mb-4'>Hecho para ti</h2>
                 <div class='flex flex-wrap gap-6'>
-                    { playlists
-                        .slice(0, 6)
-                        .map((playlist) => (
+                    { 
+                        playlists.slice(0, 6).map((playlist) => (
                             <PlayListItemCard playlist={playlist} />
                         ))
                     }
                 </div>
-            </div>
+            </footer>
         </section>
     </div>
 </Layout>
 
-<script>
-    // para que funcione en todas la paginas
-    document.addEventListener('astro:page-load', () => {
-        const grandiantColor$ = document.querySelector("#gradiantFondo") as HTMLElement; // elemento gradiante 
-        const cards$ = document.querySelectorAll("[data-color]"); // CardLarge
+<script is:inline>
 
-        if (grandiantColor$) {
-            cards$.forEach((card) => {
-                card.addEventListener("mouseover", () => {
-                    const newColor = card.getAttribute("data-color"); // recuperamos el color de la card     
-                    grandiantColor$.style.setProperty("--fondoMain-color", newColor);
-                });
+    document.addEventListener('astro:page-load', () => {
+
+        const grandiantColor$ = document.querySelector("#gradiantFondo") // Elemento gradiante
+        const playlistContainer = document.querySelector("#cardLarge-container") // Contenedor
+
+        if (grandiantColor$ && playlistContainer) {
+            playlistContainer.addEventListener("mouseover", (e) => {
+                const card = e.target.closest("[data-color]"); // recuperar el color de las card          
+                if (card) {
+                    const newColor = card.getAttribute("data-color")
+                     // cambiar el color cuando ocurra el evento
+                    grandiantColor$.style.setProperty("--fondoMain-color", newColor || "");
+                }
             });
         }
     })
+
 </script>
-@/components/menu/Home/Greating

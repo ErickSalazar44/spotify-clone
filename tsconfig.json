@@ -16,6 +16,9 @@
       ],
       "@/menu": [
         "src/components/menu/*"
+      ],
+      "@/hooks": [
+        "src/hooks/*"
       ]
     },
     "jsx": "react-jsx",

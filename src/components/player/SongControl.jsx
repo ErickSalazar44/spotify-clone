@@ -18,13 +18,11 @@ const SongControl = ({ audio }) => {
 
     // formatear tiempo de la musica
     const formatTime = (time) => {
-        if (time == null) return `0:00`;
+        if (time === null) return `0:00`;
 
         const seconds = Math.floor(time % 60);
         const minutes = Math.floor(time / 60);
-
         const duracion = `${minutes}:${seconds.toString().padStart(2, "0")}`;
-
         return duracion;
     };
 
@@ -40,7 +38,7 @@ const SongControl = ({ audio }) => {
                 defaultValue={[0]}
                 max={audio?.current?.duration ?? 0}
                 min={0}
-                className='w-[500px]'
+                className='w-[120px] md:w-[150px] lg:w-[320px] xl:w-[400px] 2xl:w-[500px]'
                 value={[currentTime]}
                 onValueChange={(value) => {
                     audio.current.currentTime = value;

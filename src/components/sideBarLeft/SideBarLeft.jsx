@@ -1,21 +1,15 @@
 // componentes
 import SideMenuCard from "./SideMenuCard";
 import SideMenuItem from "./SideMenuItem";
+import { playlists } from "@/lib/data"; // data
+import { Home, Library, Search } from '@/icons/react/SideBarIcons' // icons
+import { useSideBarLeftStore } from "@/store/sideBarLeftStore"; // Estado global
 
-// data
-import { playlists } from "@/lib/data";
-
-// icons
-import {Home, Library, Search } from '@/icons/react/SideBarIcons'
-
-// estado global
-import { useSideBarLeftStore } from "@/store/sideBarLeftStore";
 
 const SideBarLeft = () => {
-    const { isCollapsed, toggleCollapse } = useSideBarLeftStore(
-        (state) => state
-    );
+    const { isCollapsed, toggleCollapse } = useSideBarLeftStore((state) => state);
 
+    // se encarga de contraer y extender la biblioteca
     const handleClickCollapse = () => {
         toggleCollapse(!isCollapsed);
     };
@@ -29,7 +23,7 @@ const SideBarLeft = () => {
                         <Home />
                         {!isCollapsed && <span>Inicio</span>}
                     </SideMenuItem>
-                    <SideMenuItem href={"/"}>
+                    <SideMenuItem href='/'>
                         <Search />
                         {!isCollapsed && <span>Buscar</span>}
                     </SideMenuItem>
@@ -38,16 +32,19 @@ const SideBarLeft = () => {
 
             {/* B I B L I O T E C A */}
             <div className='rounded-lg bg-base flex-1'>
-                <header className='py-2 px-4 text-gray'>
-                    <button onClick={handleClickCollapse} className='h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center'>
+                <header className={`py-2 px-4 text-gray w-full ${!isCollapsed && 'min-w-[250px]'}`}>
+                    <button 
+                        onClick={handleClickCollapse} 
+                        className={`context before:top-[-36px] before:-left-2 h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center ${!isCollapsed ? 'w-[160px] context-top' : 'context-top2 pointer-events-none lg:pointer-events-auto'}`} 
+                        data-content="Contraer Tu biblioteca" 
+                        data-content2="Ampliar"
+                    >
                         <Library expand={!isCollapsed} />
-                        {!isCollapsed && (
-                            <span className='min-w-[250px] text-start'>
-                                Tu biblioteca
-                            </span>
-                        )}
+                        {!isCollapsed && (<span className='text-start'>Tu biblioteca</span>)}
                     </button>
                 </header>
+                
+                {/* A L B U M - S O N G */}
                 <ul className='px-2'>
                     {playlists.slice(6,12).map((playlist) => (
                         <SideMenuCard key={playlist.id} playlist={playlist} isCollapsed={isCollapsed}/>
