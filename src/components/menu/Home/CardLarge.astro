@@ -18,6 +18,7 @@ const { id, title, color, cover } = playlist;
 <div class="relative group">
     <a
         href={`playlist/${id}`}
+        rel="prefetch-intent"
         class='flex transition-all duration-300 overflow-hidden items-center gap-5 rounded-md shadow-lg hover:shadow-xl outline-none bg-white/10 hover:bg-white/20 focus:bg-white/20'
         transition:name={`playlist ${id} box`}
         data-color={color.dark}
