@@ -35,7 +35,7 @@ const SideBarLeft = () => {
                 <header className={`py-2 px-4 text-gray w-full ${!isCollapsed && 'min-w-[250px]'}`}>
                     <button 
                         onClick={handleClickCollapse} 
-                        className={`context before:top-[-36px] before:-left-2 h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center ${!isCollapsed ? 'w-[160px] context-top' : 'context-top2 pointer-events-none lg:pointer-events-auto'}`} 
+                        className={`context before:top-[-36px] before:-left-2 h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center ${!isCollapsed ? 'w-[160px] context-top' : 'context-top2 pointer-events-none md:pointer-events-auto'}`} 
                         data-content="Contraer Tu biblioteca" 
                         data-content2="Ampliar"
                     >

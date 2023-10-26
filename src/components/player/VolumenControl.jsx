@@ -21,10 +21,10 @@ const VolumenControl = () => {
     };
 
     return (
-        <div className='flex justify-center w-14 sm:w-auto sm:gap-x-2 '>
+        <div className='relative flex justify-center w-14 sm:w-auto sm:gap-x-2 '>
             <button
                 onClick={handleButtonMute}
-                className={`text-gray before:top-[-36px] before:-left-4 w-8 h-8 grid place-content-center md:context  ${volumen !== 0 ? 'md:context-top' : 'md:context-top2' }`}
+                className={`text-gray context sm:before:top-[-36px] sm:before:-left-4 w-8 h-8 grid place-content-center ${volumen !== 0 ? 'context-top before:hidden sm:before:inline-block' : 'context-top2 before:hidden sm:before:inline-block' }`}
                 data-content='Silenciar'
                 data-content2='No Silenciar'
             >

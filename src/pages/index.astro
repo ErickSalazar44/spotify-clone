@@ -31,7 +31,7 @@ const gradiantPorDefecto = '#134e4a'
                 <Greating />
 
                 <!-- CardLarge -->
-                <div id='cardLarge-container' class='grid gap-y-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-4'>
+                <div id='cardLarge-container' class='grid gap-y-4 gap-x-6 sm:grid-cols-2 md:[grid-template-columns:_repeat(auto-fit,_minmax(286px,_1fr))] lg:grid-cols-2 xl:grid-cols-3 mt-4'>
                     { 
                         playlists.slice(6, 12).map((playlist) => (
                             <CardLarge playlist={playlist} />
