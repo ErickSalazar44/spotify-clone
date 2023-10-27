@@ -13,7 +13,8 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
         <li>
             <a
                 href={`/playlist/${id}`}
-                aria-label={`Ir a la playlist ${title}`}
+                title={title}
+                aria-label={`Ir a la playlist ${title || 'Título no disponible'}`}
                 className='playlist-item flex relative overflow-hidden items-center gap-4 hover:bg-gray1 transition-colors hover:transition-colors p-2 rounded-md'
             >
                 <picture className='h-[50px] w-[50px] flex-none'>

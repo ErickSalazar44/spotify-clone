@@ -19,11 +19,11 @@ const SideBarLeft = () => {
             {/* M E N U */}
             <div className='bg-base rounded-lg'>
                 <ul className='px-3 py-2 text-gray font-bold'>
-                    <SideMenuItem href='/'>
+                    <SideMenuItem href='/' label={'Inicio'}>
                         <Home />
                         {!isCollapsed && <span>Inicio</span>}
                     </SideMenuItem>
-                    <SideMenuItem href='/'>
+                    <SideMenuItem href='/' label={'Buscar'}>
                         <Search />
                         {!isCollapsed && <span>Buscar</span>}
                     </SideMenuItem>

@@ -16,7 +16,7 @@ export const playlists: Playlist[] = [
         title: "Chill Lo-Fi Music",
         color: colors.yellow,
         cover:
-            "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
+            "https://i.ibb.co/NrhfSJz/9.webp",
         artists: ["NoSpirit", "Casiio"],
     },
     {
@@ -25,7 +25,7 @@ export const playlists: Playlist[] = [
         title: "Lo-Fi Chill Session",
         color: colors.indigo,
         cover:
-            "https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187",
+            "https://i.ibb.co/1sG5rNH/10.webp",
         artists: ["Kupla", "Blue Fox"],
     },
     {
@@ -34,7 +34,7 @@ export const playlists: Playlist[] = [
         title: "Study Session",
         color: colors.rose,
         cover:
-            "https://f4.bcbits.com/img/a1435058381_65.jpg",
+            "https://i.ibb.co/zm8Qn9J/11.webp",
         artists: ["Tenno", "xander", "Team Astro"],
     },
     {
@@ -43,17 +43,17 @@ export const playlists: Playlist[] = [
         title: "Blue Note Study Time",
         color: colors.green,
         cover:
-            "https://f4.bcbits.com/img/a1962013209_16.jpg",
+            "https://i.ibb.co/GfmmzVz/5.webp",
         artists: ["Raimu", "Yasumu"],
     },
     {
         id: '5',
         albumId: 5,
-        title: "Chau Saura Session",
+        title: "Relaxed Session",
         color: colors.purple,
         cover:
-            "https://f4.bcbits.com/img/a2793859494_16.jpg",
-        artists: ["Chau Saura", "amies", "kyu"],
+            "https://i.ibb.co/DRH5pYB/8.webp",
+        artists: ["Chau Relaxed", "Earl", "kyu"],
     },
     {
         id: '6',
@@ -61,7 +61,7 @@ export const playlists: Playlist[] = [
         title: "Like a Necessity",
         color: colors.orange,
         cover:
-            "https://f4.bcbits.com/img/a0363730459_16.jpg",
+            "https://i.ibb.co/cwqYKQr/4.webp",
         artists: ["WFS", "Nadav Cohen"],
     },
     {
@@ -70,7 +70,7 @@ export const playlists: Playlist[] = [
         title: "Lofi hip hop",
         color: colors.teal,
         cover:
-            "https://i.pinimg.com/550x/42/2e/09/422e095f9aa6c6ea1eb1cd803b6d993b.jpg",
+            "https://i.ibb.co/tZ6zTdG/1.webp",
         artists: ["WFS", "lofi"],
     },
     {
@@ -79,7 +79,7 @@ export const playlists: Playlist[] = [
         title: "Inspiring Piano",
         color: colors.lila,
         cover:
-            "https://i1.sndcdn.com/artworks-000601275661-1iia6q-t500x500.jpg",
+            "https://i.ibb.co/M2NbMf8/7.webp",
         artists: ["Larsen", "Candlelight"],
     },
     {
@@ -88,7 +88,7 @@ export const playlists: Playlist[] = [
         title: "Japon City",
         color: colors.yellow,
         cover:
-            "https://i.ytimg.com/vi/Cv7Be37b04E/maxresdefault.jpg",
+            "https://i.ibb.co/DM2wjgs/2.webp",
         artists: ["Japan City", "Lofi Mix"],
     },
     {
@@ -97,7 +97,7 @@ export const playlists: Playlist[] = [
         title: "Arcade Night",
         color: colors.pink,
         cover:
-            "https://public-files.gumroad.com/csgojqb02yq2mdfv61y96gxm58lh",
+            "https://i.ibb.co/SvjWTps/2222.webp",
         artists: ["Aika", "Bao", "Kotori"],
     },
     {
@@ -106,7 +106,7 @@ export const playlists: Playlist[] = [
         title: "Yung Lean",
         color: colors.green,
         cover:
-            "https://lastfm.freetls.fastly.net/i/u/300x300/3911ac651c87ddc0b744277bba12e740.jpg",
+            "https://i.ibb.co/tC1rBfG/1111.webp",
         artists: ["lofi, Yung Lean"],
     },
     {
@@ -115,7 +115,7 @@ export const playlists: Playlist[] = [
         title: "Covered Link",
         color: colors.gray,
         cover:
-            "https://f4.bcbits.com/img/a4172390638_10.jpg",
+            "https://i.ibb.co/cwRCb7Z/3.webp",
         artists: ["Shayne Orok", "CInui Toko_Machita"],
     },
 ];

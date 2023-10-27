@@ -25,6 +25,7 @@ const VolumenControl = () => {
             <button
                 onClick={handleButtonMute}
                 className={`text-gray context sm:before:top-[-36px] sm:before:-left-4 w-8 h-8 grid place-content-center ${volumen !== 0 ? 'context-top before:hidden sm:before:inline-block' : 'context-top2 before:hidden sm:before:inline-block' }`}
+                aria-label="Control de Volumen"
                 data-content='Silenciar'
                 data-content2='No Silenciar'
             >
