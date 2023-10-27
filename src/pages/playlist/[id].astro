@@ -43,9 +43,7 @@ const bgFondo = {
         <header class="px-4 pb-4 sm:px-6 sm:py-5 flex gap-4 sm:gap-8 items-end">
             <picture class='aspect-square w-32 h-32 sm:w-[232px] sm:h-[232px] block'>
                 <img
-                    class='object-cover shadow-[0_4px_60px_rgba(0,0,0,.5)]'
-                    width="128"
-                    height="128"
+                    class='object-cover w-32 h-32 sm:w-[232px] sm:h-[232px] shadow-[0_4px_60px_rgba(0,0,0,.5)]'
                     src={playlist?.cover}
                     alt={`Cover of ${playlist?.title}`}
                     transition:name=`playlist ${id} image`
