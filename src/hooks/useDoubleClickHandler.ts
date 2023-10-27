@@ -23,18 +23,20 @@ const useDoubleClickHandler = (songs: Props) => {
         isAlbumSelected: boolean ) => {
 
         // si no hay datos precargados -> hacer la llamada de las songs
-        if (currentMusic.playlist === null) {
+        if (currentMusic.playlist === null || !isAlbumSelected) {
+            // Actualiza el álbum y las canciones en el estado global
+            setCurrentMusic({ playlist:song.album, song, songs });
             loadMusic(song.albumId, song.id);
         } 
 
         // si la cancion se esta reproduciendo no volvera actualizar
         if (isPlaying && isSongSelected && isAlbumSelected ) return
 
-        // Actualizar la playlist
-        const newCurrentMusic = { ...currentMusic, song, songs };
-        setCurrentMusic(newCurrentMusic);
-
-        if (!isPlaying) return setIsPlaying(!isPlaying)
+        if (isAlbumSelected) {
+            const newCurrentMusic = { ...currentMusic, song, songs };
+            setCurrentMusic(newCurrentMusic);
+            setIsPlaying(true)
+        }
     };
 
     return handleDoubleClick

@@ -20,15 +20,15 @@ const usePlaylistPlaybackControl = (id) => {
             // Actualizar el botón de reproducción/pausa
             return setIsPlayingPlaylist(true);
         }
-        setIsPlayingPlaylist(isPlaying && currentMusic.playlist.id === id);
+        setIsPlayingPlaylist(isPlaying && currentMusic?.playlist?.id === id);
     }, [isPlaying, currentMusic]);
 
     // Función para manejar la reproducción de la playlist
     const togglePlayback = () => {
         // Actualizar el ícono de reproducción/pausa
-        if (isPlaying || id === currentMusic?.playlist?.id) {
+        if (isPlaying && id === currentMusic?.playlist?.id) {
             setIsPlaying(!isPlaying);
-            setIsPlayingPlaylist(!isPlaying);
+            setIsPlayingPlaylist(false);
         } else {
             loadMusic(id);
             setIsPlayingPlaylist(isPlaying);

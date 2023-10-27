@@ -22,7 +22,7 @@ const Player = ({ id }) => {
     useEffect(() => {
         const { song, playlist } = currentMusic;
 
-        if (song, playlist) {
+        if (song && playlist) {
             const src = `/music/${song?.albumId}/0${song.id}.mp3`;
             // Establecer la fuente de audio en el nuevo elemento
             audioRef.current.src = src;
