@@ -42,6 +42,7 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
     return (
         <tr
             onDoubleClick={() => handleDoubleClick(song, isSong, isAlbum)}
+            onTouchStart={() => handleDoubleClick(song, isSong, isAlbum)}
             className='cursor-pointer text-gray font-semibold hover:bg-white/10 active:bg-white/10  rounded group py-1'
         >
             <td className='sm:pl-[22px] sm:w-10 rounded-l'>
