@@ -7,13 +7,13 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
     const isPlaying = usePlayerStore(state => state.isPlaying) // Verificar si se esta reproduciendo 
 
     const { id, title, cover, artists } = playlist;
-
     const artistsString = artists.join(", ");
 
     return (
         <li>
             <a
                 href={`/playlist/${id}`}
+                aria-label={`Ir a la playlist ${title}`}
                 className='playlist-item flex relative overflow-hidden items-center gap-4 hover:bg-gray1 transition-colors hover:transition-colors p-2 rounded-md'
             >
                 <picture className='h-[50px] w-[50px] flex-none'>
@@ -26,11 +26,11 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
                 {!isCollapsed && (
                     <>                    
                         <div className='flex flex-col truncate justify-center'>
-                            <h4 className={`font-semibold text-[15px] 
+                            <h3 className={`font-semibold text-[15px] 
                                 ${Number(id) === song?.albumId ? 'text-green' : 'text-txt'}`}
                             >
                                 {title}
-                            </h4>
+                            </h3>
                             <span className='text-xs font-normal text-txtgray'>{artistsString}</span>
                         </div>
                         <div className={`ml-auto text-green 

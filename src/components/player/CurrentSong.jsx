@@ -4,11 +4,13 @@ const CurrentSong = ({ image, title, artists, albumId }) => {
     return (
         <section className='flex sm:flex-1 items-center sm:gap-2 lg:gap-4 relative overflow-hidden'>
             <picture className='w-14 h-14  rounded-md shadow-lg overflow-hidden'>
-                <img
-                    src={image}
-                    alt={title}
-                    className='object-cover aspect-square'
-                />
+                {image &&                
+                    <img
+                        src={image}
+                        alt={title}
+                        className='object-cover aspect-square'
+                    />
+                }
             </picture>
             <article className='hidden sm:flex sm:flex-col sm:justify-center'>
                 <h3 className='font-medium sm:text-xs lg:text-sm '>{title}</h3>
