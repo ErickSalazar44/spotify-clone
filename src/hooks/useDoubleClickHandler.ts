@@ -2,11 +2,7 @@ import { usePlayerStore } from "@/store/playerStore"; // estado global
 import usePlayerList from "@/hooks/usePlayerList"; // hook
 import type { Song } from "@/lib/data"; // tipado
 
-interface Props {
-    songs: Song[] | null;
-}
-
-const useDoubleClickHandler = (songs: Props) => {
+const useDoubleClickHandler = () => {
     // Estado global
     const { 
         currentMusic, 
@@ -22,20 +18,21 @@ const useDoubleClickHandler = (songs: Props) => {
         isSongSelected: boolean, 
         isAlbumSelected: boolean ) => {
 
-        // si no hay datos precargados -> hacer la llamada de las songs
+        // si no hay datos precargados || o el album es distinto -> hacer peticion de las songs
         if (currentMusic.playlist === null || !isAlbumSelected) {
-            // Actualiza el álbum y las canciones en el estado global
-            setCurrentMusic({ playlist:song.album, song, songs });
-            loadMusic(song.albumId, song.id);
+            return loadMusic(song.albumId, song.id);
         } 
 
         // si la cancion se esta reproduciendo no volvera actualizar
         if (isPlaying && isSongSelected && isAlbumSelected ) return
 
-        if (isAlbumSelected) {
-            const newCurrentMusic = { ...currentMusic, song, songs };
-            setCurrentMusic(newCurrentMusic);
-            setIsPlaying(true)
+        // si el album es el mismo y esta reproduciendo solo tenemos que cambiar la musica
+        const newCurrentMusic = { ...currentMusic, song };
+        setCurrentMusic(newCurrentMusic);
+
+        // si el album es el mismo y no esta reproduciendo tenemos que dar play y actualziar la musica 
+        if (isAlbumSelected && !isPlaying) {
+            setIsPlaying(true) 
         }
     };
 

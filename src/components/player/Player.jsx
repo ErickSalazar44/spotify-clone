@@ -81,7 +81,7 @@ const Player = ({ id }) => {
     // btn next song
     const handleNextSong = () => {
         if (currentMusic.playlist === null) return;
-        const nextIndex = currentMusic.song.id;
+        const nextIndex = currentMusic?.song?.id;
 
         if (nextIndex < currentMusic.songs.length) {
             const nextSong = currentMusic.songs[nextIndex];
