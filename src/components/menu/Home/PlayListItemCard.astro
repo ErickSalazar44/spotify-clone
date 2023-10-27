@@ -28,10 +28,12 @@ const artistsString = artists.join(", ");
         class='playlist-item flex relative overflow-hidden gap-4 p-3 w-[168px] flex-col'
         transition:name={`playlist ${id} box`}
     >
-        <picture class='aspect-square object-cover w-full flex-none'>
+        <picture class='aspect-square object-cover w-36 h-36 flex-none'>
             <img
                 class='rounded-sm object-cover aspect-square'
                 src={cover}
+                width="144"
+                height="144"
                 alt={`Cover of ${title}`}
                 transition:name={`playlist ${id} image`}
             />
