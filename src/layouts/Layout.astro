@@ -59,6 +59,7 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
                 font-family: "CircularStd", system-ui, sans-serif;
                 background: #000;
                 color-scheme: dark;
+                user-select: none;
             }
 
             #app {
@@ -71,17 +72,17 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
             }
 
             /* ancho del scroll */
-            ::-webkit-scrollbar {
+            main::-webkit-scrollbar {
                 width: 12px; 
             }
 
             /* fondo del scrollbar */
-            ::-webkit-scrollbar-track {
+            main::-webkit-scrollbar-track {
                 background: #121212
             }
 
             /* pulgar del scrollbar */
-            ::-webkit-scrollbar-thumb {
+            main::-webkit-scrollbar-thumb {
                 border-radius: 2px; 
                 background: #444; 
             }
