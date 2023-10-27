@@ -16,7 +16,7 @@ export const playlists: Playlist[] = [
         title: "Chill Lo-Fi Music",
         color: colors.yellow,
         cover:
-            "https://i.ibb.co/NrhfSJz/9.webp",
+            "https://i.ibb.co/dMjgZ3f/9.webp",
         artists: ["NoSpirit", "Casiio"],
     },
     {
@@ -25,7 +25,7 @@ export const playlists: Playlist[] = [
         title: "Lo-Fi Chill Session",
         color: colors.indigo,
         cover:
-            "https://i.ibb.co/1sG5rNH/10.webp",
+            "https://i.ibb.co/44QZFsF/10.webp",
         artists: ["Kupla", "Blue Fox"],
     },
     {

@@ -17,7 +17,7 @@ const CurrentSong = ({ image, title, artists, albumId }) => {
                 <ul className='flex flex-wrap gap-1 text-txtgray text-xs font-light'>
                     {artists?.map((artist) => (
                         <li key={artist}>
-                            <Enlace ruta={`/playlist/${albumId}`}>
+                            <Enlace ariaLabel={`ir a la ${albumId}`} ruta={`/playlist/${albumId}`}>
                                 {artist}
                             </Enlace>
                         </li>

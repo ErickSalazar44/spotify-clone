@@ -38,11 +38,11 @@ const { id, title, color, cover } = playlist;
         </div>
     </a>
     <div class='max-w-full absolute top-1/2 -translate-y-1/2 right-3 z-10'>
-        <div class="absolute top-3 right-3 gap-[2px] ">
+        <div class="absolute top-3 right-3 gap-[2px]">
             <SoundMove id={id} client:load/>            
         </div>
         <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ">
-            <CardPlayButton  id={id} client:visible />
+            <CardPlayButton  id={id} client:idle />
         </div>
     </div>
 </div>

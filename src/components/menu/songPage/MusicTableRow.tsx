@@ -65,16 +65,16 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
                     />
                 </picture>
                 <div className='flex flex-col'>
-                    <h3 className={`text-sm sm:text-[16px] ${rowClasses}`}>
-                        <Enlace>{song.title}</Enlace>
-                    </h3>
+                    <h2 className={`text-sm sm:text-[16px] ${rowClasses}`}>
+                        <Enlace ariaLabel={`ir a la playlist ${song.title}`}>{song.title}</Enlace>
+                    </h2>
                     <span className='text-xs sm:text-sm font-light'>
                         {song.artists.join(", ")}
                     </span>
                 </div>
             </td>
             <td className='hidden sm:table-cell md:hidden lg:table-cell sm:px-4 text-sm font-light'>
-                <Enlace>{song.title}</Enlace>
+                <Enlace ariaLabel={`ir a la playlist ${song.album}`}>{song.title}</Enlace>
             </td>
             <td className='sm:px-4 text-sm rounded-r'>{song.duration}</td>
         </tr>
