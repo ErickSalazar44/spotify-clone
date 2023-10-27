@@ -44,7 +44,7 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
             onDoubleClick={() => handleDoubleClick(song, isSong, isAlbum)}
             className='cursor-pointer text-gray font-semibold hover:bg-white/10 active:bg-white/10  rounded group py-1'
         >
-            <td className='pl-[22px] w-10 rounded-l'>
+            <td className='sm:pl-[22px] sm:w-10 rounded-l'>
                     <div className={`${showSoundMoveCell}`}>
                         <SoundMove id={song.id} forId={true}/>
                     </div>
@@ -55,7 +55,7 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
                         </span>
                     </div>
             </td>
-            <td className='px-4 py-[6px] flex items-center gap-3'>
+            <td className='px-2 py-1 sm:px-4 sm:py-[6px] flex items-center gap-3'>
                 <picture className='w-10 h-10'>
                     <img
                         className='w-10 h-10 object-cover'
@@ -64,18 +64,18 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
                     />
                 </picture>
                 <div className='flex flex-col'>
-                    <h3 className={`${rowClasses}`}>
+                    <h3 className={`text-sm sm:text-[16px] ${rowClasses}`}>
                         <Enlace>{song.title}</Enlace>
                     </h3>
-                    <span className='text-sm font-light'>
+                    <span className='text-xs sm:text-sm font-light'>
                         {song.artists.join(", ")}
                     </span>
                 </div>
             </td>
-            <td className='px-4 text-sm font-light'>
+            <td className='hidden sm:table-cell md:hidden lg:table-cell sm:px-4 text-sm font-light'>
                 <Enlace>{song.title}</Enlace>
             </td>
-            <td className='px-4 text-sm w-28 rounded-r'>{song.duration}</td>
+            <td className='sm:px-4 text-sm rounded-r'>{song.duration}</td>
         </tr>
     );
 };

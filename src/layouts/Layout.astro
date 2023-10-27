@@ -45,7 +45,7 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
         </main>
 
         <!-- C O N T R O L - S O N G  -->
-        <footer class='[grid-area:now-player] h-[72px] flex justify-between items-center'>
+        <footer class='relative z-[9999] [grid-area:now-player] h-[72px] flex justify-between items-center'>
             <Player 
                 id={id} 
                 client:load 
@@ -70,11 +70,27 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
                 grid-template-rows: 1fr auto;
             }
 
+            /* ancho del scroll */
+            ::-webkit-scrollbar {
+                width: 12px; 
+            }
+
+            /* fondo del scrollbar */
+            ::-webkit-scrollbar-track {
+                background: #121212
+            }
+
+            /* pulgar del scrollbar */
+            ::-webkit-scrollbar-thumb {
+                border-radius: 2px; 
+                background: #444; 
+            }
+
             /* Styles para Ayuda visual en los iconos  */
             .context {
                 position: relative;
                 transition: opacity 0.3s, visibility 0.3s;
-                z-index: 100;
+                z-index: 5000;
             }
 
             .context:before {

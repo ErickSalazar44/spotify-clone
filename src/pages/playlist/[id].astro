@@ -40,8 +40,8 @@ const bgFondo = {
         <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
 
         <!-- Album -->
-        <header class="px-6 py-5 flex gap-8 items-end">
-            <picture class='aspect-square w-[232px] h-[232px] block'>
+        <header class="px-4 pb-4 sm:px-6 sm:py-5 flex gap-4 sm:gap-8 items-end">
+            <picture class='aspect-square w-32 h-32 sm:w-[232px] sm:h-[232px] block'>
                 <img
                     class='object-cover w-full h-full shadow-[0_4px_60px_rgba(0,0,0,.5)]'
                     src={playlist?.cover}
@@ -54,11 +54,11 @@ const bgFondo = {
                     <span class='font-light'>Playlist</span>
                 </div>
                 <div>
-                    <h1 class='text-7xl font-black mt-2 mb-4' transition:name=`playlist ${playlist?.id} title`>
+                    <h1 class='text-xl sm:text-5xl md:text-7xl font-black mt-1 mb-2 sm:mt-2 sm:mb-4' transition:name=`playlist ${playlist?.id} title`>
                         {playlist?.title}
                     </h1>
                 </div>
-                <ul class='font-normal flex gap-1 text-sm text-gray' transition:name=`playlist ${playlist?.id} subtitle`>
+                <ul class='font-normal flex gap-1 text-[10px] sm:text-sm text-gray' transition:name=`playlist ${playlist?.id} subtitle`>
                     {playlist?.artists.map((artist, i) => (
                         <li>
                             <Enlace>{artist}</Enlace>
@@ -70,15 +70,15 @@ const bgFondo = {
                         </li>
                     ))}
                 </ul>
-                <p class="text-sm text-gray mt-2">
+                <p class="text-xs sm:text-sm text-gray mt-1 sm:mt-2">
                     <span class="text-white">{playListSongs.length} canciones</span>, 3 h aproximadamente
                 </p>
             </article>
         </header>
 
         <!-- body -->
-        <article class="px-6 bg-black/30 relative h-full">            
-            <div class=" py-7 relative z-10">
+        <article class="px-4 pb-4 sm:px-6 bg-black/30 relative h-full">            
+            <div class="py-3 sm:py-7 relative z-1 ">
                 <CardPlayButton client:visible id={id} size="3.5rem"/>
             </div>
             <MusicTable
