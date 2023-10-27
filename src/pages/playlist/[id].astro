@@ -33,8 +33,8 @@ const bgFondo = {
         transition:name={`playlist ${id} box`}
     >
         <!-- Fondo imagen -->
-        <div class="bg-cover bg-center h-full w-full absolute animacionScale scale-[1.1]" style=`background-image: url(${playlist?.cover});`></div>
-        <div class='absolute w-full h-full gradiantFondo opacity-[94%]' style={bgFondo}></div>
+        <div class="bg-cover bg-center h-full w-full absolute animacionScale blur-[1px] scale-[1.1]" style=`background-image: url(${playlist?.cover});`></div>
+        <div class='absolute w-full h-full gradiantFondo opacity-[93%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
         <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
@@ -92,7 +92,7 @@ const bgFondo = {
 <style>
 
     .animacionScale {
-        animation: scale-img 1s ease-in-out;
+        animation: scale-img 1s ;
     }
 
     @keyframes scale-img {
@@ -106,7 +106,7 @@ const bgFondo = {
     }
 
     .gradiantFondo {
-        background: linear-gradient(rgba(0, 0, 0, 0.3) 0, #121212 70%),
+        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 70%),
             rgb(0 0 0 / 0.1);
     }
 </style>
