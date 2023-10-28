@@ -18,11 +18,11 @@ const { id, title, color, cover } = playlist;
 <div class="relative group">
     <a
         href={`playlist/${id}`}
-        class='flex transition-all duration-300 overflow-hidden items-center gap-5 rounded-md shadow-lg hover:shadow-xl outline-none bg-white/10 hover:bg-white/20 focus:bg-white/20'
+        class='flex transition-all duration-300 items-center gap-2 sm:gap-5 rounded-md shadow-lg hover:shadow-xl outline-none bg-base sm:bg-white/10 sm:hover:bg-white/20 sm:focus:bg-white/20'
         transition:name={`playlist ${id} box`}
         data-color={color.dark}
         >
-        <picture class='block h-20 w-20'>
+        <picture class='block h-12 w-12 sm:h-20 sm:w-20'>
             <img
                 src={cover}
                 alt={`Cover of ${title}`}
@@ -31,18 +31,18 @@ const { id, title, color, cover } = playlist;
             />
         </picture>
         <div 
-            class='font-bold block' 
+            class='flex-1 font-semibold text-sm leading-normal sm:text-[16px] sm:font-bold' 
             transition:name=`playlist ${id} title`
         >
             {title}
         </div>
-    </a>
-    <div class='max-w-full absolute top-1/2 -translate-y-1/2 right-3 z-10'>
-        <div class="absolute top-3 right-3 gap-[2px]">
+        <div class="relative -left-2 bottom-1 w-4 h-4">
             <SoundMove id={id} client:load/>            
         </div>
-        <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ">
-            <CardPlayButton  id={id} client:idle />
+    </a>
+    <div class='max-w-full absolute top-1/2 -translate-y-1/2 right-3 z-10'>
+        <div class="relative opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden sm:block">
+            <CardPlayButton  id={id} client:idle/>
         </div>
     </div>
 </div>

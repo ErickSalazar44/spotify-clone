@@ -1,10 +1,10 @@
 import { ArrowLeft } from '@/icons/react/NavegadorIcon'
 
-const NavigationButtons = ({ backDisable, forWardDisable }) => {
+const NavigationButtons = ({ backDisable }) => {
     // Mantenimiento
 
     return (
-        <nav className='relative top-0 p-4 md:px-6 md:py-4 h-16 flex gap-2'>
+        <nav className='hidden sm:flex relative top-0 p-4 md:px-6 md:py-4 h-16 gap-2'>
             <a
                 href='/'
                 aria-label="go back to home page"

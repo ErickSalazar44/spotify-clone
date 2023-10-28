@@ -15,37 +15,35 @@ const artistsString = artists.join(", ");
 ---
 
 <article
-    class='group rounded-md relative bg-card hover:bg-cardHover hover:transition-colors shadow hover:shadow-sm transition-all duration-300'
+    class='group rounded-md relative sm:bg-card sm:hover:bg-cardHover sm:hover:transition-colors shadow sm:hover:shadow-sm duration-300'
 >
     <div
-        class=`absolute right-4 bottom-[105px] translate-y-4 transition duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-10 `
+        class=`hidden sm:block absolute right-4 bottom-[105px] translate-y-4 transition duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-10 `
     >
         <CardPlayButton id={id} client:idle />
     </div>
     <a
         href={`playlist/${id}`}
-        class='playlist-item flex relative overflow-hidden gap-4 p-3 w-[168px] flex-col'
+        class='playlist-item flex relative gap-2 sm:gap-4 sm:p-3 sm:w-[168px] flex-col'
         transition:name={`playlist ${id} box`}
     >
-        <picture class='aspect-square object-cover w-36 h-36 flex-none'>
+        <picture class='aspect-square object-cover sm:w-36 sm:h-36 '>
             <img
-                class='rounded-sm object-cover aspect-square'
+                class='rounded-sm object-cover w-full aspect-square sm:w-36 sm:h-36'
                 src={cover}
-                width="144"
-                height="144"
                 alt={`Cover of ${title}`}
-                transition:name={`playlist ${id} image`}
+                transition:name=`playlist ${id} image`
             />
         </picture>
-        <div class='flex flex-col min-h-[62px]'>
+        <div class='flex flex-col sm:min-h-[62px]'>
             <h3
-                class='font-bold text-[15px] truncate pb-1'
+                class='text-sm font-semibold truncate sm:font-bold sm:text-[15px] sm:pb-1'
                 transition:name=`playlist ${id} title`
             >
                 {title}
             </h3>
             <span
-                class='text-sm font-normal text-txtgray'
+                class='text-xs font-semibold sm:text-sm sm:font-normal truncate text-txtgray'
                 transition:animate="none"
             >
                 {artistsString}

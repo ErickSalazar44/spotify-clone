@@ -34,10 +34,10 @@ const bgFondo = {
     >
         <!-- Fondo imagen -->
         <div class="bg-cover bg-center h-full w-full absolute animacionScale blur-[1px] scale-[1.1]" style=`background-image: url(${playlist?.cover});`></div>
-        <div class='absolute w-full h-full gradiantFondo opacity-[93%]' style={bgFondo}></div>
+        <div class='absolute w-full h-full gradiantFondo opacity-[95%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load forWardDisable={true} backDisable={false}/>
+        <NavigationButtons client:load backDisable={false}/>
 
         <!-- Album -->
         <header class="px-4 pb-4 sm:px-6 sm:py-5 flex gap-4 sm:gap-8 items-end">
@@ -106,7 +106,7 @@ const bgFondo = {
     }
 
     .gradiantFondo {
-        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 70%),
+        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 60%),
             rgb(0 0 0 / 0.1);
     }
 </style>
