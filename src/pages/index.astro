@@ -15,11 +15,11 @@ const gradiantPorDefecto = '#134e4a'
 ---
 
 <Layout title='Spotify Astro'>
-    <div class='relative pt-4 sm:pt-0 transition-colors duration-1000 bg-black sm:bg-base min-h-full sm:rounded-lg'>
+    <div class='relative pt-4 sm:pt-0 transition-colors duration-1000 bg-[#0a0908] sm:bg-base min-h-full sm:rounded-lg'>
         <!-- GradiantFondo -->
         <div
             id='gradiantFondo'
-            class='absolute w-full h-40 sm:h-[304px] bg-fondoMain transition-colors duration-700 ease-in-out inset-0 bg-gradient-to-t from-black via-black/80 sm:from-base sm:via-base/80'
+            class='absolute w-full h-40 sm:h-[304px] bg-fondoMain transition-colors duration-700 ease-in-out inset-0 bg-gradient-to-t from-[#0a0908]  via-[#0a0908] /80 sm:from-base sm:via-base/80'
             style=`--fondoMain-color: ${gradiantPorDefecto}`
         ></div>
 
@@ -31,7 +31,7 @@ const gradiantPorDefecto = '#134e4a'
                 <Greating />
 
                 <!-- CardLarge -->
-                <div id='cardLarge-container' class='grid gap-2 sm:gap-y-4 sm:gap-x-6 grid-cols-2 md:[grid-template-columns:_repeat(auto-fit,_minmax(286px,_1fr))] lg:grid-cols-2 xl:grid-cols-3 mt-4'>
+                <div id='cardLarge-container' class='grid gap-2 sm:gap-y-4 sm:gap-x-6 grid-cols-2 md:[grid-template-columns:_repeat(auto-fit,_minmax(286px,_1fr))] lg:grid-cols-2 xl:grid-cols-3 mt-3 sm:mt-4'>
                     { 
                         playlists.slice(6, 12).map((playlist) => (
                             <CardLarge playlist={playlist} />

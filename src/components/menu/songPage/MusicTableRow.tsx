@@ -43,7 +43,7 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
         <tr
             onDoubleClick={() => handleDoubleClick(song, isSong, isAlbum)}
             onTouchStart={() => handleDoubleClick(song, isSong, isAlbum)}
-            className='cursor-pointer text-gray font-semibold hover:bg-white/10 active:bg-white/10  rounded group py-1'
+            className='cursor-none sm:cursor-pointer text-gray font-semibold sm:hover:bg-white/10 sm:active:bg-white/10  rounded group py-1'
         >
             <td className='sm:pl-[22px] sm:w-10 rounded-l'>
                     <div className={`${showSoundMoveCell}`}>

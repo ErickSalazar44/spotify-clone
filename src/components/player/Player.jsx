@@ -134,7 +134,7 @@ const Player = ({ id }) => {
             <div className='flex flex-col justify-center items-center gap-1 flex-1 lg:flex-[0_0_400px]'>
                 <div className='flex items-center gap-6'>
                     <button
-                        className='text-white opacity-70 hover:opacity-100'
+                        className='cursor-none sm:cursor-pointer text-white opacity-70 hover:opacity-100'
                         aria-label="Ir a la musica anterior"
                         onClick={handlePreviousSong}
                     >
@@ -142,7 +142,7 @@ const Player = ({ id }) => {
                     </button>
                     <div className='flex justify-center'>
                         <button
-                            className='bg-white text-black rounded-full p-2 hover:scale-105'
+                            className='cursor-none sm:cursor-pointer bg-white text-black rounded-full p-2 hover:scale-105'
                             aria-label='Reproducir musica'
                             onClick={handlePlayPause}
                         >
@@ -153,7 +153,7 @@ const Player = ({ id }) => {
                     <button
                         onClick={handleNextSong}
                         aria-label="Ir a la musica siguiente"
-                        className='text-white opacity-70 hover:opacity-100'
+                        className='cursor-none sm:cursor-pointer text-white opacity-70 hover:opacity-100'
                     >
                         <NextSongIcon />
                     </button>

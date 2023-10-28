@@ -24,7 +24,7 @@ const VolumenControl = () => {
         <div className='relative flex justify-center w-14 sm:w-auto sm:gap-x-2 '>
             <button
                 onClick={handleButtonMute}
-                className={`text-gray context sm:before:top-[-36px] sm:before:-left-4 w-8 h-8 grid place-content-center ${volumen !== 0 ? 'context-top before:hidden sm:before:inline-block' : 'context-top2 before:hidden sm:before:inline-block' }`}
+                className={`cursor-none sm:cursor-pointer text-gray context sm:before:top-[-36px] sm:before:-left-4 w-8 h-8 grid place-content-center ${volumen !== 0 ? 'context-top before:hidden sm:before:inline-block' : 'context-top2 before:hidden sm:before:inline-block' }`}
                 aria-label="Control de Volumen"
                 data-content='Silenciar'
                 data-content2='No Silenciar'
