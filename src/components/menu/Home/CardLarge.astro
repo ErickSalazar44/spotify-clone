@@ -19,20 +19,20 @@ const { id, title, color, cover } = playlist;
     <a
         href={`playlist/${id}`}
         class='cursor-none sm:cursor-pointer flex transition-all duration-300 items-center gap-2 sm:gap-5 rounded-md shadow-lg hover:shadow-xl outline-none bg-card sm:bg-white/10 sm:hover:bg-white/20 sm:focus:bg-white/20'
-        transition:name={`playlist ${id} box`}
+        transition:name={`playlist-${id}-box`}
         data-color={color.dark}
         >
         <picture class='block h-12 w-12 sm:h-20 sm:w-20'>
             <img
                 src={cover}
                 alt={`Cover of ${title}`}
-                class='object-cover h-full w-full shadow-[5px_0_30px_0px_rgba(0,0,0,0.3)]'
-                transition:name=`playlist ${id} image`
+                class='object-cover h-full w-full shadow-cardLarge'
+                transition:name=`playlist-${id}-image`
             />
         </picture>
         <div 
             class='flex-1 font-semibold text-sm leading-normal sm:text-[16px] sm:font-bold' 
-            transition:name=`playlist ${id} title`
+            transition:name=`playlist-${id}-title`
         >
             {title}
         </div>

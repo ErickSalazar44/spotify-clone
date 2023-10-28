@@ -32,6 +32,9 @@ export default {
                 soundMove: "soundMove 1s infinite linear",
                 soundMove2: "soundMove2 1s infinite linear",
             },
+            boxShadow: {
+                cardLarge: "5px 0 30px 0px rgba(0,0,0,0.3)",
+            },
         },
     },
     plugins: [],

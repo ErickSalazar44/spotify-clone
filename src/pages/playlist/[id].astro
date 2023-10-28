@@ -30,23 +30,23 @@ const bgFondo = {
 <Layout title={playlist ? playlist.title : "Spotify Astro"}>
     <div
         class='relative flex flex-col h-full bg-base min-h-full rounded-lg overflow-hidden'
-        transition:name={`playlist ${id} box`}
+        transition:name={`playlist-${id}-box`}
     >
         <!-- Fondo imagen -->
-        <div class="bg-cover bg-center h-full w-full absolute animacionScale blur-[1px] scale-[1.1]" style=`background-image: url(${playlist?.cover});`></div>
-        <div class='absolute w-full h-full gradiantFondo opacity-[95%]' style={bgFondo}></div>
+        <div class="bg-cover bg-center h-full w-full absolute animacionScale blur-sm scale-[1.1]" style=`background-image: url(${playlist?.cover});`></div>
+        <div class='absolute w-full h-full gradiantFondo opacity-[90%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
         <NavigationButtons client:load backDisable={false}/>
 
         <!-- Album -->
         <header class="px-4 pb-4 sm:px-6 sm:py-5 flex gap-4 sm:gap-8 items-end">
-            <picture class='aspect-square w-32 h-32 sm:w-[232px] sm:h-[232px] block'>
+            <picture class='aspect-square w-32 h-32 sm:w-[232px] sm:h-[232px]'>
                 <img
                     class='object-cover w-32 h-32 sm:w-[232px] sm:h-[232px] shadow-[0_4px_60px_rgba(0,0,0,.5)]'
                     src={playlist?.cover}
                     alt={`Cover of ${playlist?.title}`}
-                    transition:name=`playlist ${id} image`
+                    transition:name=`playlist-${id}-image`
                 />
             </picture>
             <article class='relative flex flex-col justify-end'>
@@ -54,18 +54,19 @@ const bgFondo = {
                     <span class='font-light'>Playlist</span>
                 </div>
                 <div>
-                    <h1 class='text-xl sm:text-5xl md:text-7xl font-black mt-1 mb-2 sm:mt-2 sm:mb-4' transition:name=`playlist ${id} title`>
+                    <h1 class='text-xl sm:text-5xl md:text-7xl font-black mt-1 mb-2 sm:mt-2 sm:mb-4' transition:name=`playlist-${id}-title`>
                         {playlist?.title}
                     </h1>
                 </div>
-                <ul class='font-normal flex gap-1 text-[10px] sm:text-sm text-gray' transition:animate="none">
+                <ul 
+                    class='font-normal flex gap-1 text-[10px] sm:text-sm text-gray' 
+                    transition:name=`playlist-${id}-subtitle`
+                >
                     {playlist?.artists.map((artist, i) => (
                         <li>
                             <Enlace ariaLabel={'Seleccionar Artista'}>{artist}</Enlace>
                             <span>
-                                {playlist?.artists.length !== i + 1
-                                    ? " • "
-                                    : ""}
+                                {playlist?.artists.length !== i + 1 ? " • " : ""}
                             </span>
                         </li>
                     ))}
@@ -106,7 +107,7 @@ const bgFondo = {
     }
 
     .gradiantFondo {
-        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 60%),
+        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 80%),
             rgb(0 0 0 / 0.1);
     }
 </style>

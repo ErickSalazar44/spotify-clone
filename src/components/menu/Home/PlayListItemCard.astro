@@ -17,37 +17,37 @@ const artistsString = artists.join(", ");
 <article
     class='group rounded-md relative sm:bg-card sm:hover:bg-cardHover sm:hover:transition-colors shadow sm:hover:shadow-sm duration-300'
 >
-    <div
-        class=`hidden sm:block absolute right-4 bottom-[105px] translate-y-4 transition duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-10 `
-    >
-        <CardPlayButton id={id} client:idle />
-    </div>
     <a
         href={`playlist/${id}`}
-        class='cursor-none sm:cursor-pointer playlist-item flex relative gap-2 sm:gap-4 sm:p-3 sm:w-[168px] flex-col'
-        transition:name={`playlist ${id} box`}
+        class='playlist-item flex relative gap-2 sm:gap-4 sm:p-3 sm:w-[168px] flex-col'
+        transition:name={`playlist-${id}-box`}
     >
-        <picture class='aspect-square object-cover sm:w-36 sm:h-36 '>
+        <picture class='aspect-square object-cover sm:w-36 sm:h-36'>
             <img
                 class='rounded-sm object-cover w-full aspect-square sm:w-36 sm:h-36'
                 src={cover}
                 alt={`Cover of ${title}`}
-                transition:name=`playlist ${id} image`
+                transition:name=`playlist-${id}-image`
             />
         </picture>
         <div class='flex flex-col sm:min-h-[62px]'>
             <h3
                 class='text-sm font-semibold truncate sm:font-bold sm:text-[15px] sm:pb-1'
-                transition:name=`playlist ${id} title`
+                transition:name=`playlist-${id}-title`
             >
                 {title}
             </h3>
             <span
                 class='text-xs font-semibold sm:text-sm sm:font-normal truncate text-txtgray'
-                transition:animate="none"
+                transition:name=`playlist-${id}-subtitle`
             >
                 {artistsString}
             </span>
         </div>
     </a>
+    <div
+        class=`hidden sm:block absolute right-4 bottom-[105px] translate-y-4 transition duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-10 `
+    >
+        <CardPlayButton id={id} client:idle />
+    </div>
 </article>
