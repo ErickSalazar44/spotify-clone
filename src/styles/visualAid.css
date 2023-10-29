@@ -1,0 +1,34 @@
+/* Styles para Ayuda visual en los iconos  */
+@media (min-width: 640px) {
+    .context {
+        position: relative;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 5000;
+    }
+    .context:before {
+        opacity: 0;
+        color: white;
+        padding: 9px 9px 7px 9px;
+        background: #242424;
+        border-radius: 4px;
+        line-height: 1;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        transition: opacity 0.3s, visibility 0.3s;
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        visibility: hidden;
+        text-wrap: nowrap;
+        z-index: 100;
+    }
+    .context:hover::before {
+        visibility: visible;
+        opacity: 1;
+    }
+    .context-top:before {
+        content: attr(data-content)
+    }
+    .context-top2:before {
+        content: attr(data-content2)
+    }
+}

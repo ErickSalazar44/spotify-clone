@@ -1,0 +1,38 @@
+html {
+    font-family: "CircularStd", system-ui, sans-serif;
+    background: #000;
+    color-scheme: dark;
+    user-select: none;
+}
+/* Estructura de la app */
+#app {
+    display: grid;
+    grid-template-areas:
+        "left-sidebar main-view main-view"
+        "now-player now-player now-player";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+}
+
+/* ancho del scroll */
+main::-webkit-scrollbar {
+    width: 0; 
+}
+
+@media (min-width: 640px) { 
+/* ancho del scroll */
+    main::-webkit-scrollbar {
+        width: 12px; 
+}
+}
+
+/* fondo del scrollbar */
+main::-webkit-scrollbar-track {
+    background: #121212
+}
+
+/* pulgar del scrollbar */
+main::-webkit-scrollbar-thumb {
+    border-radius: 2px; 
+    background: #444; 
+}

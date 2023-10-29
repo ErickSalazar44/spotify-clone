@@ -4,7 +4,7 @@ import SideMenuItem from "./SideMenuItem";
 import { playlists } from "@/lib/data"; // data
 import { Home, Library, Search } from '@/icons/react/SideBarIcons' // icons
 import { useSideBarLeftStore } from "@/store/sideBarLeftStore"; // Estado global
-
+import '@/styles/visualAid.css' // Style
 
 const SideBarLeft = () => {
     const { isCollapsed, toggleCollapse } = useSideBarLeftStore((state) => state);
@@ -35,7 +35,7 @@ const SideBarLeft = () => {
                 <header className={`py-2 px-4 text-gray w-full ${!isCollapsed && 'min-w-[250px]'}`}>
                     <button 
                         onClick={handleClickCollapse} 
-                        className={`cursor-none sm:cursor-pointer context before:top-[-36px] before:-left-2 h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center ${!isCollapsed ? 'w-[160px] context-top' : 'context-top2 pointer-events-none md:pointer-events-auto'}`} 
+                        className={`cursor-auto sm:cursor-pointer context before:top-[-36px] before:-left-2 h-10 py-1 px-2 flex gap-5 hover:text-white transition-colors font-bold items-center ${!isCollapsed ? 'w-[160px] context-top' : 'context-top2 pointer-events-none md:pointer-events-auto'}`} 
                         data-content="Contraer Tu biblioteca" 
                         data-content2="Ampliar"
                     >

@@ -1,4 +1,6 @@
 ---
+// CSS 
+import "./layout.css";
 // Components
 import Player from "@/components/player/Player";
 import SideBarLeft from "@/components/sideBarLeft/SideBarLeft";
@@ -29,7 +31,6 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
         <link rel='stylesheet' href='/fonts/fonts.css'/>
     </head>
     <body id="app" class='relativo h-[100svh] md:pt-2 md:p-2 md:gap-2'>
-
         <!-- S I D E B A R L E F T -->
         <aside class='hidden md:[grid-area:left-sidebar] md:flex flex-col overflow-y-auto'>
             <SideBarLeft
@@ -38,14 +39,12 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
                 transition:name='sidebar-left'
             />
         </aside>
-
         <!-- M A I N  -->
         <main class='[grid-area:main-view] md:rounded-lg overflow-y-auto'>
             <slot />
         </main>
-
         <!-- C O N T R O L - S O N G  -->
-        <footer class='bg-black w-full relative z-50 [grid-area:now-player] h-[72px] flex justify-between items-center'>
+        <footer class='bg-black w-full relative z-50 [grid-area:now-player] h-[72px] flex justify-between items-center rounded-2xl'>
             <Player 
                 id={id} 
                 client:load 
@@ -53,83 +52,5 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
                 transition:persist
             />
         </footer>
-
-        <style is:global>
-                /* Styles para Ayuda visual en los iconos  */
-                .context {
-                position: relative;
-                transition: opacity 0.3s, visibility 0.3s;
-                z-index: 5000;
-            }
-
-            .context:before {
-                opacity: 0;
-                color: white;
-                padding: 9px 9px 7px 9px;
-                background: #242424;
-                border-radius: 4px;
-                line-height: 1;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-                transition: opacity 0.3s, visibility 0.3s;
-                font-size: 14px;
-                font-weight: 600;
-                position: absolute;
-                visibility: hidden;
-                text-wrap: nowrap;
-                z-index: 100;
-            }
-
-            .context:hover::before {
-                visibility: visible;
-                opacity: 1;
-            }
-
-            .context-top:before  { content: attr(data-content) }
-            .context-top2:before { content: attr(data-content2) }
-
-
-        </style>
-
-        <style>
-            html {
-                font-family: "CircularStd", system-ui, sans-serif;
-                background: #000;
-                color-scheme: dark;
-                user-select: none;
-            }
-
-            #app {
-                display: grid;
-                grid-template-areas:
-                    "left-sidebar main-view main-view"
-                    "now-player now-player now-player";
-                grid-template-columns: auto 1fr;
-                grid-template-rows: 1fr auto;
-            }
-
-            /* ancho del scroll */
-            main::-webkit-scrollbar {
-                width: 0; 
-            }
-
-            @media (min-width: 640px) { 
-            /* ancho del scroll */
-                main::-webkit-scrollbar {
-                    width: 12px; 
-            }
-            }
-
-            /* fondo del scrollbar */
-            main::-webkit-scrollbar-track {
-                background: #121212
-            }
-
-            /* pulgar del scrollbar */
-            main::-webkit-scrollbar-thumb {
-                border-radius: 2px; 
-                background: #444; 
-            }
-
-        </style>
     </body>
 </html>

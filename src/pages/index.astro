@@ -24,7 +24,7 @@ const gradiantPorDefecto = '#134e4a'
         ></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load backDisable={true}/>
+        <NavigationButtons client:load backDisable={true} indexPage={false}/>
         <section class='relative z-10 px-4 md:px-6 flex flex-col gap-6 overflow-y-visible'>
             <header>
                 <!-- Saludos -->
@@ -41,8 +41,8 @@ const gradiantPorDefecto = '#134e4a'
             </header>
 
             <footer>
-                <h2 class='text-xl sm:text-2xl font-bold mb-4'>Hecho para ti</h2>
-                <div class='grid [grid-template-columns:_repeat(auto-fit,_minmax(90px,_1fr))] gap-2 sm:flex sm:flex-wrap sm:gap-6'>
+                <h2 class='text-lg sm:text-2xl font-bold mb-4'>Hecho para ti</h2>
+                <div class='grid [grid-template-columns:_repeat(auto-fit,_minmax(100px,_1fr))] gap-2 sm:flex sm:flex-wrap sm:gap-6'>
                     { 
                         playlists.slice(0, 6).map((playlist) => (
                             <PlayListItemCard playlist={playlist} />

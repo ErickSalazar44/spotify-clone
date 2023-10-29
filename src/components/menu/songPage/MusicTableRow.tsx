@@ -43,23 +43,23 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
         <tr
             onDoubleClick={() => handleDoubleClick(song, isSong, isAlbum)}
             onTouchStart={() => handleDoubleClick(song, isSong, isAlbum)}
-            className='cursor-none sm:cursor-pointer text-gray font-semibold sm:hover:bg-white/10 sm:active:bg-white/10  rounded group py-1'
+            className='cursor-auto sm:cursor-pointer text-gray font-semibold sm:hover:bg-white/10 sm:active:bg-white/10 rounded group py-1'
         >
             <td className='sm:pl-[22px] sm:w-10 rounded-l'>
                     <div className={`${showSoundMoveCell}`}>
                         <SoundMove id={song.id} forId={true}/>
                     </div>
-                    <div className={`${showIndexCell}`}>
+                    <div className={`${showIndexCell} `}>
                         <span className='group-hover:hidden'>{index + 1}</span>
-                        <span className={`text-white hidden group-hover:inline-block`}>
+                        <span className={`hidden text-white group-hover:inline-block`}>
                             <Play w={12} h={12} />
                         </span>
                     </div>
             </td>
             <td className='px-2 py-1 sm:px-4 sm:py-[6px] flex items-center gap-3'>
-                <picture className='w-10 h-10'>
+                <picture className='w-12 h-12 sm:w-10 sm:h-10'>
                     <img
-                        className='w-10 h-10 object-cover'
+                        className='w-12 h-12 sm:w-10 sm:h-10 object-cover'
                         src={song.image}
                         alt={song.title}
                     />

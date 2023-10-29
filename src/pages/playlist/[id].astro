@@ -29,32 +29,30 @@ const bgFondo = {
 
 <Layout title={playlist ? playlist.title : "Spotify Astro"}>
     <div
-        class='relative flex flex-col h-full bg-base min-h-full rounded-lg overflow-hidden'
+        class='relative flex flex-col h-full bg-base min-h-full sm:rounded-lg overflow-x-hidden sm:overflow-hidden'
         transition:name={`playlist-${id}-box`}
     >
         <!-- Fondo imagen -->
-        <div class="bg-cover bg-center h-full w-full absolute animacionScale blur-sm scale-[1.1]" style=`background-image: url(${playlist?.cover});`></div>
+        <div class="absolute bg-cover bg-center h-full w-full animacionScale blur-sm sm:scale-[1.1]" style=`background-image: url(${playlist?.cover})`></div>
         <div class='absolute w-full h-full gradiantFondo opacity-[90%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load backDisable={false}/>
+        <NavigationButtons client:load backDisable={false} indexPage={true}/>
 
         <!-- Album -->
         <header class="px-4 pb-4 sm:px-6 sm:py-5 flex gap-4 sm:gap-8 items-end">
-            <picture class='aspect-square w-32 h-32 sm:w-[232px] sm:h-[232px]'>
-                <img
-                    class='object-cover w-32 h-32 sm:w-[232px] sm:h-[232px] shadow-[0_4px_60px_rgba(0,0,0,.5)]'
-                    src={playlist?.cover}
-                    alt={`Cover of ${playlist?.title}`}
-                    transition:name=`playlist-${id}-image`
-                />
-            </picture>
+            <img
+                class='object-cover w-32 aspect-square sm:w-[232px] md:w-[clamp(140px,50%,232px)] lg:w-[232px] shadow-[0_4px_60px_rgba(0,0,0,.5)]'
+                src={playlist?.cover}
+                alt={`Cover of ${playlist?.title}`}
+                transition:name=`playlist-${id}-image`
+            />
             <article class='relative flex flex-col justify-end'>
                 <div>
                     <span class='font-light'>Playlist</span>
                 </div>
                 <div>
-                    <h1 class='text-xl sm:text-5xl md:text-7xl font-black mt-1 mb-2 sm:mt-2 sm:mb-4' transition:name=`playlist-${id}-title`>
+                    <h1 class='text-xl sm:text-5xl md:text-[clamp(48px,100%,60px)] lg:text-7xl font-black mt-1 mb-2 sm:mt-2 sm:mb-4' transition:name=`playlist-${id}-title`>
                         {playlist?.title}
                     </h1>
                 </div>
@@ -72,28 +70,30 @@ const bgFondo = {
                     ))}
                 </ul>
                 <p class="text-xs sm:text-sm text-gray mt-1 sm:mt-2">
-                    <span class="text-white">{playListSongs.length} canciones</span>, 3 h aproximadamente
+                    <span class="text-white">{playListSongs.length} canciones</span>
+                    <span class="hidden sm:inline">, 3 h aproximadamente</span>
                 </p>
             </article>
         </header>
 
         <!-- body -->
-        <article class="px-4 pb-4 sm:px-6 bg-black/30 relative h-full">            
+        <article class="flex flex-col px-4 pb-4 sm:px-6 bg-black/30 relative h-full">            
             <div class="py-3 sm:py-7 relative z-1">
                 <CardPlayButton client:idle id={id} size="3.5rem"/>
             </div>
             <MusicTable
-                songs={playListSongs} 
-                client:load 
+                songs={playListSongs}
+                client:visible 
             />
         </article>    
     </div>
 </Layout>
 
 <style>
-
-    .animacionScale {
-        animation: scale-img 1s ;
+    @media (min-width: 640px) {        
+        .animacionScale {
+            animation: scale-img 1s ;
+        }
     }
 
     @keyframes scale-img {
@@ -107,7 +107,6 @@ const bgFondo = {
     }
 
     .gradiantFondo {
-        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 80%),
-            rgb(0 0 0 / 0.1);
+        background: linear-gradient(rgba(0, 0, 0, 0) 0, #121212 80%);
     }
 </style>

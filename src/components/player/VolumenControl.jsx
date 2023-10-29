@@ -2,6 +2,7 @@ import { Slider } from "@/components/menu/Slider"; // Librerias Slider
 import { usePlayerStore } from "@/store/playerStore"; // Estado global 
 import { IconVolumenMute, IconVolumenFull, IconVolumenMedio, IconVolumenBajo} from "@/icons/react/VolumeControl"; // icons
 import { useRef } from "react";
+import '@/styles/visualAid.css'
 
 const VolumenControl = () => {
     // ESTADO GLOBAL PARA MANEJAR VOLUMEN
@@ -21,10 +22,10 @@ const VolumenControl = () => {
     };
 
     return (
-        <div className='relative flex justify-center w-14 sm:w-auto sm:gap-x-2 '>
+        <div className='relative flex sm:flex-1 sm:justify-end justify-center items-center w-14 sm:w-auto sm:gap-x-2 '>
             <button
                 onClick={handleButtonMute}
-                className={`cursor-none sm:cursor-pointer text-gray context sm:before:top-[-36px] sm:before:-left-4 w-8 h-8 grid place-content-center ${volumen !== 0 ? 'context-top before:hidden sm:before:inline-block' : 'context-top2 before:hidden sm:before:inline-block' }`}
+                className={`cursor-auto sm:cursor-pointer text-gray context sm:before:top-[-36px] sm:before:-left-4 w-8 h-8 grid place-content-center ${volumen !== 0 ? 'context-top before:hidden sm:before:inline-block' : 'context-top2 before:hidden sm:before:inline-block' }`}
                 aria-label="Control de Volumen"
                 data-content='Silenciar'
                 data-content2='No Silenciar'

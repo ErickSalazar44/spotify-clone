@@ -18,7 +18,7 @@ const { id, title, color, cover } = playlist;
 <div class="relative group">
     <a
         href={`playlist/${id}`}
-        class='cursor-none sm:cursor-pointer flex transition-all duration-300 items-center gap-2 sm:gap-5 rounded-md shadow-lg hover:shadow-xl outline-none bg-card sm:bg-white/10 sm:hover:bg-white/20 sm:focus:bg-white/20'
+        class='cursor-auto sm:cursor-pointer flex transition-all duration-300 items-center gap-2 sm:gap-5 rounded-[2px] sm:rounded-md overflow-hidden shadow-lg hover:shadow-xl outline-none bg-card sm:bg-white/10 sm:hover:bg-white/20 sm:focus:bg-white/20'
         transition:name={`playlist-${id}-box`}
         data-color={color.dark}
         >

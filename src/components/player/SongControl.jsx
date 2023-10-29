@@ -30,7 +30,7 @@ const SongControl = ({ audio }) => {
     const duration = audio?.current?.duration ?? 0;
 
     return (
-        <div className='flex gap-x-2 text-xs'>
+        <div className='hidden sm:flex gap-x-2 text-xs'>
             <span className='text-txtgray w-10 text-right'>
                 {formatTime(currentTime)}
             </span>

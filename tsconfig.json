@@ -19,6 +19,9 @@
       ],
       "@/hooks": [
         "src/hooks/*"
+      ],
+      "@/styles": [
+        "src/styles/*"
       ]
     },
     "jsx": "react-jsx",
