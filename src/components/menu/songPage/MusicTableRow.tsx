@@ -2,9 +2,8 @@ import { Play } from "@/icons/react/PausePlay"; // icons
 import Enlace from "@/components/Enlace"; // componentes
 import { usePlayerStore } from "@/store/playerStore"; // estado global
 import SoundMove from "../SoundMove"; // icon move sound
-import { type Song } from '../../../lib/data';
+import { type Song } from '../../../lib/data'; // type
 import { useState, useEffect } from 'react';
-
 
 interface MusicTableRowProps {
     song: Song;
@@ -19,8 +18,8 @@ export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowP
     const isSong = song?.id === currentMusic?.song?.id;
     const isAlbum = song?.albumId === currentMusic?.song?.albumId;
 
-    // TODO OPTIMIZABLE AUN TENGO QUE AVERIGUAR POR QUE NO RENDERIZA CORREACTAMENTE CUANDO HAGO COMPARACIONES EN LINEA
-    // Definir clases CSS en el estado local
+    // TODO OPTIMIZABLE AUN TENGO QUE AVERIGUAR POR QUE NO RENDERIZA CORRECTAMENTE CUANDO HAGO COMPARACIONES EN LINEA
+
     const [rowClasses, setRowClasses] = useState("font-light text-white");
     const [showSoundMoveCell, setShowSoundMoveCell] = useState('inline-block');
     const [showIndexCell, setShowIndexCell] = useState('inline-block');

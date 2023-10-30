@@ -1,7 +1,7 @@
 export const colors = {
-    lila: { accent: "#6a206a ", dark: "#735d78" },
+    lila: { accent: "#6a206a ", dark: "#2b2d42" },
     orange: { accent: "#f32e4e", dark: "#7c2d12" },
-    yellow: { accent: "#685044", dark: "#78350f" },
+    yellow: { accent: "#5e503f", dark: "#78350f" },
     green: { accent: "#1CBF60", dark: "#165031" },
     teal: { accent: "#2ee9d7", dark: "#134e4a" },
     blue: { accent: "#2ea2e9", dark: "#1e3a8a" },

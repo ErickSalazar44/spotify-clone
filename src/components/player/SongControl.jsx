@@ -38,7 +38,7 @@ const SongControl = ({ audio }) => {
                 defaultValue={[0]}
                 max={audio?.current?.duration ?? 0}
                 min={0}
-                className='w-[120px] md:w-[150px] lg:w-[320px] xl:w-[400px] 2xl:w-[500px]'
+                className='w-[120px] md:w-[150px] lg:w-[320px] xl:w-[400px] 2xl:w-[620px]'
                 value={[currentTime]}
                 onValueChange={(value) => {
                     audio.current.currentTime = value;

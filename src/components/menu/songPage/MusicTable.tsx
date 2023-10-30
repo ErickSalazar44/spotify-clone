@@ -10,6 +10,7 @@ interface Props {
 const MusicTable = ({ songs }: Props) => {
 
     const handleDoubleClick = useDoubleClickHandler()
+    
     return (
         <table className='table-auto text-left min-w-full divide-y divide-txtgray/30 relative z-10'>
             <thead>

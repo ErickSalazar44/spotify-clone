@@ -48,11 +48,11 @@ const ReproductorControl = ({ audioRef, id }) => {
     const handlePreviousSong = () => {
         if (currentMusic.playlist === null) return;
         const previousIndex = currentMusic.song.id - 2;
-
         if (previousIndex >= 0) {
             const previousSong = currentMusic.songs[previousIndex];
             setCurrentSong(previousSong);
         }
+        setIsPlaying(true)
     };
 
     // btn play pausa
@@ -88,10 +88,11 @@ const ReproductorControl = ({ audioRef, id }) => {
             const song = currentMusic.songs[0];
             setCurrentSong(song);
         }
+        setIsPlaying(true)
     };
 
     return (
-        <div className='hidden sm:flex sm:flex-col justify-center items-center sm:gap-1 sm:flex-1'>
+        <div className='hidden sm:flex sm:flex-col justify-center items-center sm:gap-1 sm:flex-1 lg:gap-2'>
             <div className='flex items-center gap-6'>
                 <button
                     className='hidden sm:block text-white opacity-70 hover:opacity-100'

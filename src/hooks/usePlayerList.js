@@ -1,18 +1,10 @@
 import { usePlayerStore } from "@/store/playerStore"; // Estado global
-/**
- * Hook personalizado para cargar y reproducir canciones de una lista de reproducción.
- *
- * @returns {function} Una función que permite cargar y reproducir canciones de una lista de reproducción.
- * @param {string|number} albumId - El ID del álbum de la lista de reproducción (opcional).
- * @param {string|number} songId - El ID de la canción a reproducir (opcional).
- */
 
 const usePlayerList = () => {
     // Obtener funciones del estado global
     const { setIsPlaying, setCurrentMusic } = usePlayerStore((state) => state);
 
     //Carga una canción de una lista de reproducción y comienza la reproducción.
-
     const loadMusic = async (albumId, songId) => {
         try {
             // Determinar el identificador del álbum

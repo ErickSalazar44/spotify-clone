@@ -34,6 +34,8 @@ export default {
             },
             boxShadow: {
                 cardLarge: "5px 0 30px 0px rgba(0,0,0,0.3)",
+                playlist: "0 4px 60px rgba(0,0,0,.5)",
+                btnPlay: "0 4px 90px rgba(0,0,0,.5)",
             },
         },
     },

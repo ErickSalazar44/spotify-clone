@@ -4,21 +4,18 @@ import type { Playlist } from "@/lib/data";
 // componentes 
 import CardPlayButton from "@/components/menu/CardPlayButton"
 import SoundMove from "@/components/menu/SoundMove";
-
+// type
 interface Props {
     playlist: Playlist
 }
 const { playlist } = Astro.props
 const { id, title, color, cover } = playlist;
 
-//TODO por el momendo no duplicare las canciones hasta agregar nuevas 
-// se usara desde la cancion 6 a la 12
-
 ---
 <div class="relative group">
     <a
         href={`playlist/${id}`}
-        class='cursor-auto sm:cursor-pointer flex transition-all duration-300 items-center gap-2 sm:gap-5 rounded-[2px] sm:rounded-md overflow-hidden shadow-lg hover:shadow-xl outline-none bg-card sm:bg-white/10 sm:hover:bg-white/20 sm:focus:bg-white/20'
+        class='cursor-auto sm:cursor-pointer flex transition-all duration-300 items-center gap-2 sm:gap-5 rounded-[2px] sm:rounded-md overflow-hidden shadow-sm hover:shadow outline-none bg-card sm:bg-white/10 sm:hover:bg-white/20 sm:focus:bg-white/20'
         transition:name={`playlist-${id}-box`}
         data-color={color.dark}
         >
@@ -36,7 +33,7 @@ const { id, title, color, cover } = playlist;
         >
             {title}
         </div>
-        <div class="relative -left-2 bottom-1 w-4 h-4">
+        <div class="relative -left-2 sm:-left-6 bottom-1 w-4 h-4">
             <SoundMove id={id} client:load/>            
         </div>
     </a>
