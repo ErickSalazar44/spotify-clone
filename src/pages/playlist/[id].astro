@@ -9,6 +9,7 @@ import NavigationButtons from "@/components/menu/NavigationButtons";
 import Enlace from "../../components/Enlace";
 import MusicTable from "@/components/menu/songPage/MusicTable";
 import CardPlayButton from "@/components/menu/CardPlayButton";
+import ProjectInfo from "@/components/ProjectInfo.astro";
 
 // id Params
 const { id } = Astro.params;
@@ -37,7 +38,9 @@ const bgFondo = {
         <div class='absolute w-full h-full gradiantFondo opacity-[90%]' style={bgFondo}></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load backDisable={false} indexPage={true}/>
+        <NavigationButtons client:load backDisable={false} indexPage={true}>
+            <ProjectInfo/>
+        </NavigationButtons>
 
         <!-- Album -->
         <header class="px-4 pb-4 sm:px-6 sm:py-5 flex gap-4 sm:gap-8 items-end">

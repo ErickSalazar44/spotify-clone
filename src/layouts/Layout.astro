@@ -15,6 +15,7 @@ interface Props {
 
 const { title } = Astro.props;
 const { id } = Astro.params
+const ident = Number(id)
 
 const description = 'Explora y disfruta de una experiencia de reproducción de música excepcional en nuestro sitio. Descubre tus canciones favoritas, crea listas de reproducción personalizadas y sumérgete en un mundo de sonidos. ¡Únete a nosotros y lleva la música a todas partes!'
 ---
@@ -47,7 +48,7 @@ const description = 'Explora y disfruta de una experiencia de reproducción de m
         <!-- C O N T R O L - S O N G  -->
         <footer class='bg-black w-full relative z-50 [grid-area:now-player] h-[72px] flex justify-between items-center rounded-2xl'>
             <Player 
-                id={id} 
+                id={ident} 
                 client:load 
                 transition:name='media-player' 
                 transition:persist

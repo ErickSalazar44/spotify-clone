@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { type Playlist, type Song } from '../lib/data';
 
 // ESTADO GLOBAL
@@ -33,4 +34,5 @@ export type UseSoundMove  = (id: number, forId: boolean) => boolean
 export interface NavigationButtonsProps {
     backDisable: boolean;
     indexPage: boolean;
+    children: ReactNode;
 }

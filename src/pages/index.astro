@@ -9,6 +9,7 @@ import PlayListItemCard from "@/components/menu/Home/PlayListItemCard.astro";
 import { Greating } from "@/components/menu/Home/Greating";
 import CardLarge from "@/components/menu/Home/CardLarge.astro";
 import NavigationButtons from "@/components/menu/NavigationButtons";
+import ProjectInfo from "@/components/ProjectInfo.astro";
 
 // color inicial
 const gradiantPorDefecto = '#134e4a'
@@ -24,7 +25,9 @@ const gradiantPorDefecto = '#134e4a'
         ></div>
 
         <!-- PageHeader -->
-        <NavigationButtons client:load backDisable={true} indexPage={false}/>
+        <NavigationButtons client:load backDisable={true} indexPage={false}>
+            <ProjectInfo/>
+        </NavigationButtons>
         <section class='relative z-10 px-4 md:px-6 flex flex-col gap-6 overflow-y-visible'>
             <header>
                 <!-- Saludos -->
