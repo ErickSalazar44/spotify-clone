@@ -1,6 +1,6 @@
 import useSoundMove from '@/hooks/useSoundMove'
 
-const SoundMove = ({ id, forId = false }) => {
+const SoundMove = ({ id, forId = false }: {id: number, forId?: boolean}) => {
 
     const visible = useSoundMove(id, forId)
 

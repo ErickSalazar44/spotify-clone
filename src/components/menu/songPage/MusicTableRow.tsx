@@ -2,14 +2,9 @@ import { Play } from "@/icons/react/PausePlay"; // icons
 import Enlace from "@/components/Enlace"; // componentes
 import { usePlayerStore } from "@/store/playerStore"; // estado global
 import SoundMove from "../SoundMove"; // icon move sound
-import { type Song } from '../../../lib/data'; // type
 import { useState, useEffect } from 'react';
+import type { MusicTableRowProps } from "@/types/appTypes";
 
-interface MusicTableRowProps {
-    song: Song;
-    index: number;
-    handleDoubleClick: (song: Song, isSong: boolean, isAlbum: boolean) => void;
-}
 
 export const MusicTableRow = ({ song, index, handleDoubleClick }: MusicTableRowProps) => {
     // Estado global 

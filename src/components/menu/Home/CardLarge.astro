@@ -8,7 +8,7 @@ import SoundMove from "@/components/menu/SoundMove";
 interface Props {
     playlist: Playlist
 }
-const { playlist } = Astro.props
+const { playlist }: Props = Astro.props
 const { id, title, color, cover } = playlist;
 
 ---

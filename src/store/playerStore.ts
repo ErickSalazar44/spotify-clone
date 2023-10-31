@@ -1,6 +1,7 @@
+import type { PlayerStoreState } from "@/types/appTypes";
 import { create } from "zustand";
 
-export const usePlayerStore = create((set) => ({
+export const usePlayerStore = create<PlayerStoreState>((set) => ({
     // PAUSAR MUSICA
     isPlaying: false,
     setIsPlaying: (isPlaying) => set({ isPlaying }),

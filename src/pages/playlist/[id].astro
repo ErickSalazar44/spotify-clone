@@ -12,9 +12,9 @@ import CardPlayButton from "@/components/menu/CardPlayButton";
 
 // id Params
 const { id } = Astro.params;
-
+const ident = Number(id)
 // playlistSeleccionada
-const playlist = allPlaylists.find((playlist) => playlist.id === id);
+const playlist = allPlaylists.find((playlist) => playlist.id === ident);
 
 // Canciones del playlist elegida
 const playListSongs = songs.filter(
@@ -79,7 +79,7 @@ const bgFondo = {
         <!-- body -->
         <article class="flex flex-col px-4 pb-4 sm:px-6 bg-black/30 relative h-full">            
             <div class="py-3 sm:py-7 relative z-1">
-                <CardPlayButton client:idle id={id} size="3.5rem"/>
+                <CardPlayButton client:idle id={ident} size="3.5rem"/>
             </div>
             <MusicTable
                 songs={playListSongs}

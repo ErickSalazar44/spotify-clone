@@ -2,7 +2,7 @@ import { usePlayerStore } from "@/store/playerStore";
 import { useEffect, useState } from "react";
 import usePlayerList from "@/hooks/usePlayerList";
 
-const usePlaylistPlaybackControl = (id) => {
+const usePlaylistPlaybackControl = (id : number) => {
     // constrols -> ESTADO GLOBAL
     const { currentMusic, isPlaying, setIsPlaying } = usePlayerStore(
         (state) => state
@@ -26,7 +26,7 @@ const usePlaylistPlaybackControl = (id) => {
     // Función para manejar la reproducción de la playlist
     const togglePlayback = () => {
         // Actualizar el ícono de reproducción/pausa
-        if (isPlaying && id === currentMusic?.playlist?.id) {
+        if (id === currentMusic?.playlist?.id) {
             setIsPlaying(!isPlaying);
             setIsPlayingPlaylist(false);
         } else {

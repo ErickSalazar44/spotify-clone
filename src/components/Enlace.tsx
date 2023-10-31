@@ -1,4 +1,12 @@
-const Enlace = ({ children, ruta = "#", ariaLabel }) => {
+import type { ReactNode } from "react";
+
+interface EnlaceProps {
+    children: ReactNode;
+    ruta?: string;
+    ariaLabel: string;
+}
+
+const Enlace = ({ children, ruta = "#", ariaLabel }: EnlaceProps) => {
     return (
         <a
             href={ruta}

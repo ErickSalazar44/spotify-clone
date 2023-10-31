@@ -1,7 +1,13 @@
 import { usePlayerStore } from "@/store/playerStore"; // Estado global
 import { IconVolumenFull } from "@/icons/react/VolumeControl" // Icons
+import { type Playlist } from '../../lib/data';
 
-const SideMenuCard = ({ playlist, isCollapsed }) => {
+interface SideMenuCardProps {
+    playlist: Playlist;
+    isCollapsed: boolean
+}
+
+const SideMenuCard = ({ playlist, isCollapsed }: SideMenuCardProps) => {
 
     const { song } = usePlayerStore(state => state.currentMusic) // Song en reproduccion
     const isPlaying = usePlayerStore(state => state.isPlaying) // Verificar si se esta reproduciendo 
@@ -27,14 +33,14 @@ const SideMenuCard = ({ playlist, isCollapsed }) => {
                     <>                    
                         <div className='flex flex-col truncate justify-center'>
                             <h3 className={`font-semibold text-[15px] 
-                                ${Number(id) === song?.albumId ? 'text-green' : 'text-txt'}`}
+                                ${id === song?.albumId ? 'text-green' : 'text-txt'}`}
                             >
                                 {title}
                             </h3>
                             <span className='text-xs font-normal text-txtgray'>{artistsString}</span>
                         </div>
                         <div className={`ml-auto text-green 
-                            ${Number(id) === song?.albumId && isPlaying ? 'opacity-100' : 'opacity-0'}`}
+                            ${id === song?.albumId && isPlaying ? 'opacity-100' : 'opacity-0'}`}
                         >
                             <IconVolumenFull/>
                         </div>

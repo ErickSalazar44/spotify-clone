@@ -1,4 +1,9 @@
-export const PreviousSongIcon = ({ w = 12, h = 12 }) => (
+interface SongIconProps {
+    w?: number;
+    h?: number;
+}
+
+export const PreviousSongIcon = ({ w = 12, h = 12 }:SongIconProps) => (
     <svg 
         width={w} 
         height={h} 
@@ -12,7 +17,7 @@ export const PreviousSongIcon = ({ w = 12, h = 12 }) => (
     </svg>
 );
 
-export const NextSongIcon = ({ w = 12, h = 12 }) => (
+export const NextSongIcon = ({ w = 12, h = 12 }:SongIconProps) => (
     <svg
         role='img'
         width={w}

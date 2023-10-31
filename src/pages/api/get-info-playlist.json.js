@@ -7,7 +7,7 @@ export async function GET({ params, request }) {
     const id = urlObject.searchParams.get("id");
 
     // buscamos la playList con el mismo id de la url
-    const playlist = allPlaylists.find((playlist) => playlist.id === id);
+    const playlist = allPlaylists.find((playlist) => playlist.id === +id);
 
     // devolvemos todas las canciones de la playlist elegida
     const songs = allSongs.filter((song) => song.albumId === playlist?.albumId);

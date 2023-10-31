@@ -1,22 +1,15 @@
 import { usePlayerStore } from "@/store/playerStore"; // estado global
 import usePlayerList from "@/hooks/usePlayerList"; // hook
-import type { Song } from "@/lib/data"; // tipado
+import type { DoubleClickCardHandler } from "@/types/appTypes"; // type
 
 const useDoubleClickHandler = () => {
     // Estado global
-    const { 
-        currentMusic, 
-        setCurrentMusic, 
-        isPlaying, 
-        setIsPlaying } = usePlayerStore((state) => state);
+    const { currentMusic, setCurrentMusic, isPlaying, setIsPlaying } = usePlayerStore((state) => state);
 
     const loadMusic = usePlayerList() // Hook
     
     // DoubleClick -> select song
-    const handleDoubleClick = (
-        song: Song, 
-        isSongSelected: boolean, 
-        isAlbumSelected: boolean ) => {
+    const handleDoubleClick: DoubleClickCardHandler  = (song, isSongSelected, isAlbumSelected ) => {
 
         // si no hay datos precargados || o el album es distinto -> hacer peticion de las songs
         if (currentMusic.playlist === null || !isAlbumSelected) {

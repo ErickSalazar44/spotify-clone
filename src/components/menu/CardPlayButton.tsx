@@ -2,8 +2,8 @@ import { Pause, Play } from "@/icons/react/PausePlay";
 import usePlaylistPlaybackControl from "@/hooks/usePlaylistPlaybackControl";
 
 interface Props {
-    id: number | string | undefined,
-    size: string
+    id: number;
+    size?: string;
 }
 
 const CardPlayButton = ({ id, size = "3rem" } : Props) => {

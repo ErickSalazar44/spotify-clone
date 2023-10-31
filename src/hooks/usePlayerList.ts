@@ -1,14 +1,19 @@
 import { usePlayerStore } from "@/store/playerStore"; // Estado global
+// type
+import type { Song } from "@/lib/data";
+type LoadMusicFunction = (albumId: number, songId?: number) => void;
+
 
 const usePlayerList = () => {
     // Obtener funciones del estado global
     const { setIsPlaying, setCurrentMusic } = usePlayerStore((state) => state);
 
     //Carga una canción de una lista de reproducción y comienza la reproducción.
-    const loadMusic = async (albumId, songId) => {
+    const loadMusic : LoadMusicFunction = async (albumId, songId) => {
         try {
             // Determinar el identificador del álbum
-            const identificador = albumId ? Number(albumId) : 1;
+            const identificador = albumId ?? 1;
+
             // Realizar una solicitud para obtener información de la lista de reproducción
             const response = await fetch(
                 `/api/get-info-playlist.json?id=${identificador}`
@@ -25,7 +30,7 @@ const usePlayerList = () => {
             setIsPlaying(true);
             // Establecer la canción inicial (por defecto o según songId)
             const initialSong = songId
-                ? songs.find((song) => song.id === songId)
+                ? songs.find((song: Song) => song.id === songId)
                 : songs[0];
 
             setCurrentMusic({ songs, playlist, song: initialSong });

@@ -1,7 +1,7 @@
 import { colors } from "./colors";
 
 export interface Playlist {
-    id: string;
+    id: number;
     albumId: number;
     title: string;
     color: (typeof colors)[keyof typeof colors];
@@ -11,7 +11,7 @@ export interface Playlist {
 
 export const playlists: Playlist[] = [
     {
-        id: '1',
+        id: 1,
         albumId: 1,
         title: "Chill Lo-Fi Music",
         color: colors.yellow,
@@ -20,7 +20,7 @@ export const playlists: Playlist[] = [
         artists: ["NoSpirit", "Casiio"],
     },
     {
-        id: '2',
+        id: 2,
         albumId: 2,
         title: "Lo-Fi Chill Session",
         color: colors.indigo,
@@ -29,7 +29,7 @@ export const playlists: Playlist[] = [
         artists: ["Kupla", "Blue Fox"],
     },
     {
-        id: '3',
+        id: 3,
         albumId: 3,
         title: "Study Session",
         color: colors.rose,
@@ -38,7 +38,7 @@ export const playlists: Playlist[] = [
         artists: ["Tenno", "xander", "Team Astro"],
     },
     {
-        id: '4',
+        id: 4,
         albumId: 4,
         title: "Blue Note Study Time",
         color: colors.purple,
@@ -47,7 +47,7 @@ export const playlists: Playlist[] = [
         artists: ["Raimu", "Yasumu"],
     },
     {
-        id: '5',
+        id: 5,
         albumId: 5,
         title: "Relaxed Session",
         color: colors.lila,
@@ -56,7 +56,7 @@ export const playlists: Playlist[] = [
         artists: ["Chau Relaxed", "Earl", "kyu"],
     },
     {
-        id: '6',
+        id: 6,
         albumId: 6,
         title: "Like a Necessity",
         color: colors.orange,
@@ -65,7 +65,7 @@ export const playlists: Playlist[] = [
         artists: ["WFS", "Nadav Cohen"],
     },
     {
-        id: '7',
+        id: 7,
         albumId: 7,
         title: "Lofi hip hop",
         color: colors.teal,
@@ -74,7 +74,7 @@ export const playlists: Playlist[] = [
         artists: ["WFS", "lofi"],
     },
     {
-        id: '8',
+        id: 8,
         albumId: 8,
         title: "Inspiring Piano",
         color: colors.lila,
@@ -83,7 +83,7 @@ export const playlists: Playlist[] = [
         artists: ["Larsen", "Candlelight"],
     },
     {
-        id: '9',
+        id: 9,
         albumId: 9,
         title: "Japon City",
         color: colors.yellow,
@@ -92,7 +92,7 @@ export const playlists: Playlist[] = [
         artists: ["Japan City", "Lofi Mix"],
     },
     {
-        id: '10',
+        id: 10,
         albumId: 10,
         title: "Arcade Night",
         color: colors.pink,
@@ -101,7 +101,7 @@ export const playlists: Playlist[] = [
         artists: ["Aika", "Bao", "Kotori"],
     },
     {
-        id: '11',
+        id: 11,
         albumId: 11,
         title: "Yung Lean",
         color: colors.green,
@@ -110,7 +110,7 @@ export const playlists: Playlist[] = [
         artists: ["lofi, Yung Lean"],
     },
     {
-        id: '12',
+        id: 12,
         albumId: 12,
         title: "Covered Link",
         color: colors.gray,

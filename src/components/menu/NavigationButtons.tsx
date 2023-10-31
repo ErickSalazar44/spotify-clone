@@ -1,7 +1,8 @@
 import { ArrowLeft } from '@/icons/react/NavegadorIcon'
 import '@/styles/visualAid.css'
+import type { NavigationButtonsProps } from '@/types/appTypes';
 
-const NavigationButtons = ({ backDisable, indexPage }) => {
+const NavigationButtons = ({ backDisable, indexPage }: NavigationButtonsProps) => {
 
     return (
         <nav className={`${indexPage ? 'flex' : 'hidden sm:flex'} relative top-0 p-4 md:px-6 md:py-4 h-16 gap-2`}>

@@ -1,17 +1,19 @@
+import { useState } from "react";
 // componentes
 import SideMenuCard from "./SideMenuCard";
 import SideMenuItem from "./SideMenuItem";
 import { playlists } from "@/lib/data"; // data
 import { Home, Library, Search } from '@/icons/react/SideBarIcons' // icons
-import { useSideBarLeftStore } from "@/store/sideBarLeftStore"; // Estado global
 import '@/styles/visualAid.css' // Style
 
+
 const SideBarLeft = () => {
-    const { isCollapsed, toggleCollapse } = useSideBarLeftStore((state) => state);
+
+    const [isCollapsed, setIsCollapsed] = useState(false)
 
     // se encarga de contraer y extender la biblioteca
     const handleClickCollapse = () => {
-        toggleCollapse(!isCollapsed);
+        setIsCollapsed(!isCollapsed);
     };
 
     return (
@@ -47,7 +49,11 @@ const SideBarLeft = () => {
                 {/* A L B U M - S O N G */}
                 <ul className='px-2'>
                     {playlists.slice(6,12).map((playlist) => (
-                        <SideMenuCard key={playlist.id} playlist={playlist} isCollapsed={isCollapsed}/>
+                        <SideMenuCard 
+                            key={playlist.id} 
+                            playlist={playlist} 
+                            isCollapsed={isCollapsed}
+                        />
                     ))}
                 </ul>
             </div>

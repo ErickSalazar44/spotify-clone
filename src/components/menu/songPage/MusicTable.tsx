@@ -3,11 +3,11 @@ import { MusicTableRow } from "./MusicTableRow"; // components
 import type { Song } from "@/lib/data"; // tipado
 import useDoubleClickHandler from "@/hooks/useDoubleClickHandler";
 
-interface Props {
+interface Songs {
     songs: Song[];
 }
 
-const MusicTable = ({ songs }: Props) => {
+const MusicTable = ({ songs }: Songs) => {
 
     const handleDoubleClick = useDoubleClickHandler()
     
